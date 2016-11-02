@@ -4,10 +4,8 @@
   width: device-width;
 }
 
-header {
-  /*background-image: url('../images/skiing.png');*/
-}
-
-/** {
-  background-color: lightslategray;
+/*.content {
+  background-image: url('../images/skiing.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }*/
