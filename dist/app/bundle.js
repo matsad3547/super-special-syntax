@@ -22340,10 +22340,10 @@
 
 	exports = module.exports = __webpack_require__(/*! ./../../../../~/css-loader/lib/css-base.js */ 179)();
 	// imports
-	
+	exports.push([module.id, "@import url(http://fonts.googleapis.com/css?family=Lato:300,400,500);", ""]);
 	
 	// module
-	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box; }\n\nh1, h2, h3, h4 {\n  padding: .5em; }\n\n.header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  background-color: #05668D;\n  color: white; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline; }\n\n.content {\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap; }\n\n.main {\n  background-color: white;\n  color: black;\n  width: 80%;\n  height: 40em; }\n\n.main p {\n  padding: 1em; }\n\n.sidebar {\n  background-color: #028090;\n  color: white;\n  width: 20%; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em; }\n\nfooter {\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n", ""]);
+	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\nh1, h2, h3, h4 {\n  padding: .5em; }\n\n.header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  background-color: #05668D;\n  color: white; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline; }\n\n.content {\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap; }\n\n.main {\n  background-color: white;\n  color: black;\n  width: 80%;\n  height: 40em; }\n\n.main p {\n  padding: 1em; }\n\n.sidebar {\n  background-color: #028090;\n  color: white;\n  width: 20%; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em; }\n\nfooter {\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n", ""]);
 	
 	// exports
 
@@ -22700,7 +22700,7 @@
 
 	exports = module.exports = __webpack_require__(/*! ./../../../../~/css-loader/lib/css-base.js */ 179)();
 	// imports
-	exports.push([module.id, "@import url(http://fonts.googleapis.com/css?family=Ubuntu:300,400,500);", ""]);
+	
 	
 	// module
 	exports.push([module.id, "@include responsive-font(5vw, 35px, 150px, 50px);\n\n@-ms-viewport{\n  width: device-width;\n}\n\nheader {\n  /*background-image: url('../images/skiing.png');*/\n}\n\n/** {\n  background-color: lightslategray;\n}*/\n", ""]);
