@@ -15,9 +15,9 @@
   "author": "Matt Sadauckas",
   "license": "ISC",
   "devDependencies": {
-    "style-loader": "^0.13.1"
   },
   "dependencies": {
+    "style-loader": "^0.13.1",
     "babel-loader": "^6.2.7",
     "express": "^4.14.0",
     "react": "^15.3.2",
