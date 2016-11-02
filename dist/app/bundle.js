@@ -22344,10 +22344,10 @@
 
 	exports = module.exports = __webpack_require__(/*! ./../../../../~/css-loader/lib/css-base.js */ 179)();
 	// imports
-	exports.push([module.id, "@import url(http://fonts.googleapis.com/css?family=Lato:300,400,500);", ""]);
+	exports.push([module.id, "@import url(//fonts.googleapis.com/css?family=Lato:300,400,500);", ""]);
 	
 	// module
-	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\n.container {\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.png */ 180) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center; }\n\nh1, h2, h3, h4 {\n  padding: .5em; }\n\nh1 {\n  font-size: 2em; }\n\n.header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  height: 8em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline; }\n\n.content {\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap; }\n\n.main {\n  color: black;\n  width: 80%;\n  height: 50em;\n  margin: 0 3% 0 2%; }\n\n.post {\n  padding: 1em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar {\n  color: white;\n  width: 15%; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em; }\n\nfooter {\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n", ""]);
+	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\n.container {\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.png */ 180) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center; }\n\nh1, h2, h3, h4 {\n  padding: .5em; }\n\nh1 {\n  font-size: 2em; }\n\n.header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  height: 8em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline; }\n\n.content {\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap; }\n\n.main {\n  color: black;\n  width: 80%;\n  height: 50em;\n  margin: 0 3% 0 2%; }\n\n.post {\n  padding: 1em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar {\n  color: white;\n  width: 15%;\n  padding-left: 2em; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em; }\n\nfooter {\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n", ""]);
 	
 	// exports
 
@@ -22716,7 +22716,7 @@
 	
 	
 	// module
-	exports.push([module.id, "@include responsive-font(5vw, 35px, 150px, 50px);\n\n@-ms-viewport{\n  width: device-width;\n}\n\n/*.content {\n  background-image: url('../images/skiing.png');\n  background-repeat: no-repeat;\n  background-size: cover;\n}*/\n", ""]);
+	exports.push([module.id, "@include responsive-font(5vw, 35px, 150px, 50px);\n\n@-ms-viewport{\n  width: device-width;\n}\n\n/*.sidebar {\n  -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0% rgba(0, 0, 0, 0) 59% rgba(0, 0, 0, .65) 100%);\n  -webkit-gradient(linear, left top, right top, from rgba(0, 0, 0, .5) 0% to rgba(0, 0, 0, .5) 59%);\n  // background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50% rgba(0, 0, 0, 1) 0%);\n}*/\n\n/*.content {\n  background-image: url('../images/skiing.png');\n  background-repeat: no-repeat;\n  background-size: cover;\n}*/\n", ""]);
 	
 	// exports
 
