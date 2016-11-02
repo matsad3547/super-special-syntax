@@ -1,4 +1,4 @@
-// $bg-img: url('../images/skiing.png')
+$bg-img: url('../images/skiing.png')
 
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,500)
 
@@ -7,8 +7,8 @@
   margin: 0
   box-sizing: border-box
   font-family: 'Lato', sans-serif
-  background-image: url('../images/skiing.png')
-  // $bg-img
+  // background-image: $bg-img
+
 
 h1, h2, h3, h4
   padding: .5em
@@ -33,20 +33,23 @@ h1, h2, h3, h4
   display: flex
   flex-direction: row-reverse
   flex-wrap: wrap
+  background-image: $bg-img
 
 .main
-  background-color: white
   color: black
   width: 80%
   height: 40em
+  margin-right: 5%
 
-.main p
+.post
   padding: 1em
+  background-color: white
+  border-radius: 5px
 
 .sidebar
-  background-color: #028090
+  // background-color: #028090
   color: white
-  width: 20%
+  width: 15%
 
 .sidebar h3
   padding: .5em
