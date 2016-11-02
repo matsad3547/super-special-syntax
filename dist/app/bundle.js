@@ -21987,7 +21987,7 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _appCss = __webpack_require__(/*! ./appCss.css */ 181);
+	var _appCss = __webpack_require__(/*! ./appCss.css */ 182);
 	
 	var _appCss2 = _interopRequireDefault(_appCss);
 	
@@ -22128,7 +22128,7 @@
 	        _react2.default.createElement(
 	          'h1',
 	          null,
-	          'Demo Blog'
+	          'SuperSpecialSyntax'
 	        ),
 	        _react2.default.createElement(
 	          'h4',
@@ -22198,20 +22198,24 @@
 	            currentBlogTitle
 	          ),
 	          _react2.default.createElement(
-	            'p',
+	            'h4',
 	            { className: 'date' },
 	            blogDate
 	          )
 	        ),
 	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-	        ),
-	        _react2.default.createElement(
-	          'p',
-	          null,
-	          'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	          'div',
+	          { className: 'post' },
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+	          )
 	        )
 	      );
 	    }
@@ -22315,7 +22319,7 @@
 	var content = __webpack_require__(/*! !./../../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 178);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 180)(content, {});
+	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 181)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22343,7 +22347,7 @@
 	exports.push([module.id, "@import url(http://fonts.googleapis.com/css?family=Lato:300,400,500);", ""]);
 	
 	// module
-	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\nh1, h2, h3, h4 {\n  padding: .5em; }\n\n.header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  background-color: #05668D;\n  color: white; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline; }\n\n.content {\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap; }\n\n.main {\n  background-color: white;\n  color: black;\n  width: 80%;\n  height: 40em; }\n\n.main p {\n  padding: 1em; }\n\n.sidebar {\n  background-color: #028090;\n  color: white;\n  width: 20%; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em; }\n\nfooter {\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n", ""]);
+	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\n.container {\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.png */ 180) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center; }\n\nh1, h2, h3, h4 {\n  padding: .5em; }\n\nh1 {\n  font-size: 2em; }\n\n.header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  height: 8em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline; }\n\n.content {\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap; }\n\n.main {\n  color: black;\n  width: 80%;\n  height: 50em;\n  margin: 0 3% 0 2%; }\n\n.post {\n  padding: 1em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar {\n  color: white;\n  width: 15%; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em; }\n\nfooter {\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n", ""]);
 	
 	// exports
 
@@ -22409,6 +22413,15 @@
 
 /***/ },
 /* 180 */
+/*!***********************************!*\
+  !*** ./src/app/images/skiing.png ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "src/app/images/skiing.png?8c51d69eca";
+
+/***/ },
+/* 181 */
 /*!**************************************!*\
   !*** ../~/style-loader/addStyles.js ***!
   \**************************************/
@@ -22663,7 +22676,7 @@
 
 
 /***/ },
-/* 181 */
+/* 182 */
 /*!***************************************!*\
   !*** ./src/app/components/appCss.css ***!
   \***************************************/
@@ -22672,10 +22685,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../../~/css-loader!./appCss.css */ 182);
+	var content = __webpack_require__(/*! !./../../../../~/css-loader!./appCss.css */ 183);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 180)(content, {});
+	var update = __webpack_require__(/*! ./../../../../~/style-loader/addStyles.js */ 181)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22692,7 +22705,7 @@
 	}
 
 /***/ },
-/* 182 */
+/* 183 */
 /*!*******************************************************!*\
   !*** ../~/css-loader!./src/app/components/appCss.css ***!
   \*******************************************************/
@@ -22703,7 +22716,7 @@
 	
 	
 	// module
-	exports.push([module.id, "@include responsive-font(5vw, 35px, 150px, 50px);\n\n@-ms-viewport{\n  width: device-width;\n}\n\nheader {\n  /*background-image: url('../images/skiing.png');*/\n}\n\n/** {\n  background-color: lightslategray;\n}*/\n", ""]);
+	exports.push([module.id, "@include responsive-font(5vw, 35px, 150px, 50px);\n\n@-ms-viewport{\n  width: device-width;\n}\n\n/*.content {\n  background-image: url('../images/skiing.png');\n  background-repeat: no-repeat;\n  background-size: cover;\n}*/\n", ""]);
 	
 	// exports
 
