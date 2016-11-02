@@ -23,8 +23,17 @@ var config = {
         }
       },
       {
+       test: /\.json?/,
+       include: SRC_DIR,
+       loader: "json-loader"
+      },
+      {
         test: /\.sass$/,
         loaders: ['style', 'css', 'sass']
+      },
+      {
+        test: /\.css$/,
+        loader: "style!css"
       }
     ]
   }

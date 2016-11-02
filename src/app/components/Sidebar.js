@@ -5,20 +5,20 @@ import React from 'react';
 let months = ['October', 'November'];
 let topics = ['Stuff', 'Things'];
 
-const listItem = (arr) => (arr.map( (item) =>
-  <li key={item}>
+const linkListItem = (arr) => (arr.map( (item) =>
+  <li key={item}><a href={item}>
     {item}
-  </li>
+  </a></li>
 ));
 
 export default class Sidebar extends React.Component {
   render () {
     return(
-    <div id="sidebar">
+    <div className="sidebar">
       <h3>Past Entries</h3>
-        {listItem(months)}
+        {linkListItem(months)}
       <h3>Blog Topics</h3>
-        {listItem(topics)}
+        {linkListItem(topics)}
     </div>
     );
   }
