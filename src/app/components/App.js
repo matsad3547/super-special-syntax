@@ -15,8 +15,8 @@ export default class App extends React.Component {
       <div>
         <div className='container'>
           <Header />
-          <Sidebar />
           <Main />
+          <Sidebar />
         </div>
         <Footer />
       </div>

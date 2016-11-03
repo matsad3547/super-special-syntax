@@ -21987,7 +21987,7 @@
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _appCss = __webpack_require__(/*! ./appCss.css */ 181);
+	var _appCss = __webpack_require__(/*! ./appCss.css */ 182);
 	
 	var _appCss2 = _interopRequireDefault(_appCss);
 	
@@ -22013,13 +22013,13 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'container' },
-	        _react2.default.createElement(_Header2.default, null),
+	        null,
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'content' },
-	          _react2.default.createElement(_Main2.default, null),
-	          _react2.default.createElement(_Sidebar2.default, null)
+	          { className: 'container' },
+	          _react2.default.createElement(_Header2.default, null),
+	          _react2.default.createElement(_Sidebar2.default, null),
+	          _react2.default.createElement(_Main2.default, null)
 	        ),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
@@ -22124,7 +22124,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'header' },
+	        { className: 'header div' },
 	        _react2.default.createElement(
 	          'h1',
 	          null,
@@ -22188,7 +22188,7 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'main' },
+	        { className: 'main div' },
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'main-header' },
@@ -22284,19 +22284,27 @@
 	    value: function render() {
 	      return _react2.default.createElement(
 	        'div',
-	        { className: 'sidebar' },
+	        { className: 'sidebar div' },
 	        _react2.default.createElement(
-	          'h3',
+	          'div',
 	          null,
-	          'Past Entries'
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Past Entries'
+	          ),
+	          linkListItem(months)
 	        ),
-	        linkListItem(months),
 	        _react2.default.createElement(
-	          'h3',
+	          'div',
 	          null,
-	          'Blog Topics'
-	        ),
-	        linkListItem(topics)
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Blog Topics'
+	          ),
+	          linkListItem(topics)
+	        )
 	      );
 	    }
 	  }]);
@@ -22319,7 +22327,7 @@
 	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 178);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 180)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 181)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22344,10 +22352,10 @@
 
 	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 179)();
 	// imports
-	exports.push([module.id, "@import url(http://fonts.googleapis.com/css?family=Lato:300,400,500);", ""]);
+	exports.push([module.id, "@import url(//fonts.googleapis.com/css?family=Lato:300,400,500);", ""]);
 	
 	// module
-	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\n.container {\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center; }\n\nh1, h2, h3, h4 {\n  padding: .5em;\n  text-shadow: black 1px 1px; }\n\nh1 {\n  font-size: 2em; }\n\n.header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  height: 8em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.2);\n  margin-top: 2em; }\n\n.content {\n  display: flex;\n  flex-direction: row-reverse;\n  flex-wrap: wrap; }\n\n.main {\n  color: black;\n  width: 80%;\n  height: 50em;\n  margin: 0 3% 0 2%; }\n\n.post {\n  padding: 1em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar {\n  background: rgba(0, 0, 0, 0.1);\n  color: white;\n  width: 15%;\n  padding-left: 1em; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em; }\n\nfooter {\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n", ""]);
+	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\nh1, h2, h3, h4 {\n  padding: .5em;\n  text-shadow: black 1px 1px; }\n\nh1 {\n  font-size: 2em; }\n\n.container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  align-content: flex-start;\n  align-items: flex-start;\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.jpg */ 180) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center; }\n\n.div {\n  width: 300px;\n  flex-grow: 0;\n  flex-shrink: 0;\n  flex-basis: 0; }\n\n.header {\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 100%;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  height: 8em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.sidebar {\n  height: 40em;\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 15%;\n  background: rgba(0, 0, 0, 0.1);\n  color: white;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding-left: 1em; }\n\n.main {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 80%;\n  order: 2;\n  color: black;\n  height: 40em;\n  margin: 0 3% 0 2%; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.2);\n  margin-top: 2em; }\n\n.post {\n  padding: 1em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em; }\n\nfooter {\n  width: 100%;\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n", ""]);
 	
 	// exports
 
@@ -22413,6 +22421,17 @@
 
 /***/ },
 /* 180 */
+/*!***********************************!*\
+  !*** ./src/app/images/skiing.jpg ***!
+  \***********************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	module.exports = __webpack_require__.p + "src/app/images/skiing.jpg?5729823dea";
+
+/***/ },
+/* 181 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -22667,7 +22686,7 @@
 
 
 /***/ },
-/* 181 */
+/* 182 */
 /*!***************************************!*\
   !*** ./src/app/components/appCss.css ***!
   \***************************************/
@@ -22676,10 +22695,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./appCss.css */ 182);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./appCss.css */ 183);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 180)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 181)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22696,7 +22715,7 @@
 	}
 
 /***/ },
-/* 182 */
+/* 183 */
 /*!******************************************************!*\
   !*** ./~/css-loader!./src/app/components/appCss.css ***!
   \******************************************************/
@@ -22707,7 +22726,7 @@
 	
 	
 	// module
-	exports.push([module.id, "@include responsive-font(5vw, 35px, 150px, 50px);\n\n@-ms-viewport{\n  width: device-width;\n}\n\n/*.sidebar {\n  -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0% rgba(0, 0, 0, 0) 59% rgba(0, 0, 0, .65) 100%);\n  -webkit-gradient(linear, left top, right top, from rgba(0, 0, 0, .5) 0% to rgba(0, 0, 0, .5) 59%);\n  // background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50% rgba(0, 0, 0, 1) 0%);\n}*/\n\n/*.content {\n  background-image: url('../images/skiing.png');\n  background-repeat: no-repeat;\n  background-size: cover;\n}*/\n", ""]);
+	exports.push([module.id, "@include responsive-font(5vw, 35px, 150px, 50px);\n\n@-ms-viewport{\n  width: device-width;\n}\n\n/*.sidebar {\n  -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0% rgba(0, 0, 0, 0) 59% rgba(0, 0, 0, .65) 100%);\n  -webkit-gradient(linear, left top, right top, from rgba(0, 0, 0, .5) 0% to rgba(0, 0, 0, .5) 59%);\n  // background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50% rgba(0, 0, 0, 1) 0%);\n}*/\n\n/*.content {\n  background-image: url('../images/skiing.png');\n  background-repeat: no-repeat;\n  background-size: cover;\n}*/\n\n/*// background-color: rgba(0, 0, 0, .15)\n// -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0% rgba(0, 0, 0, 0) 59% rgba(0, 0, 0, .65) 100%)\n// -webkit-gradient(linear, left top, right top, from rgba(0, 0, 0, .5) 0% to rgba(0, 0, 0, .5) 59%)\n// background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50% rgba(0, 0, 0, 1) 0%)*/\n", ""]);
 	
 	// exports
 
