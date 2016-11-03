@@ -12,11 +12,11 @@ import appCss from './appCss.css';
 export default class App extends React.Component {
   render () {
     return (
-      <div className='container'>
-        <Header />
-        <div className='content'>
-          <Main />
+      <div>
+        <div className='container'>
+          <Header />
           <Sidebar />
+          <Main />
         </div>
         <Footer />
       </div>

@@ -8,7 +8,7 @@ let blogDate = 'November 2, 2016';
 export default class Main extends React.Component {
   render () {
     return(
-    <div className='main'>
+    <div className='main div'>
       <div className='main-header'>
         <h2>{currentBlogTitle}</h2>
         <h4 className='date'>{blogDate}</h4>

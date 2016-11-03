@@ -5,7 +5,7 @@ import React from 'react';
 export default class Header extends React.Component {
   render () {
     return(
-    <div className='header'>
+    <div className='header div'>
       <h1>SuperSpecialSyntax</h1>
       <h4>by Matt Sadauckas</h4>
     </div>

@@ -1,3 +1,5 @@
+$columnHeight: 40em
+
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,500)
 
 *
@@ -6,13 +8,6 @@
   box-sizing: border-box
   font-family: 'Lato', sans-serif
 
-.container
-  background-image: url('../images/skiing.jpg')
-  background-repeat: no-repeat
-  background-size: cover
-  background-attachment: fixed
-  background-position: center
-
 h1, h2, h3, h4
   padding: .5em
   text-shadow: black 1px 1px
@@ -20,7 +15,31 @@ h1, h2, h3, h4
 h1
   font-size: 2em
 
+.container
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  justify-content: flex-start
+  align-content: flex-start
+  align-items: flex-start
+  background-image: url('../images/skiing.jpg')
+  background-repeat: no-repeat
+  background-size: cover
+  background-attachment: fixed
+  background-position: center
+
+.div
+  width: 300px
+  // height: 40em
+  flex-grow: 0
+  flex-shrink: 0
+  flex-basis: 0
+
 .header
+  flex-grow: 0
+  flex-shrink: 1
+  flex-basis: 100%
+  // order: 1
   display: flex
   flex-direction: row
   flex-wrap: wrap
@@ -30,6 +49,28 @@ h1
   height: 8em
   background-color: rgba(5, 102, 141, .6)
   color: white
+
+.sidebar
+  height: $columnHeight
+  flex-grow: 1
+  flex-shrink: 0
+  flex-basis: 15%
+  background: rgba(0, 0, 0, .1)
+  color: white
+  display: flex
+  flex-direction: column
+  flex-wrap: wrap
+  padding-left: 1em
+
+.main
+  // width: 80%
+  flex-grow: 1
+  flex-shrink: 0
+  flex-basis: 80%
+  order: 2
+  color: black
+  height: $columnHeight
+  margin: 0 3% 0 2%
 
 .main-header
   display: flex
@@ -41,31 +82,10 @@ h1
   background-color: rgba(0, 0, 0, .2)
   margin-top: 2em
 
-.content
-  display: flex
-  flex-direction: row-reverse
-  flex-wrap: wrap
-
-.main
-  color: black
-  width: 80%
-  height: 50em
-  margin: 0 3% 0 2%
-
 .post
   padding: 1em
   background-color: white
   border-radius: 5px
-
-.sidebar
-  // background-color: rgba(0, 0, 0, .15)
-  // -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0% rgba(0, 0, 0, 0) 59% rgba(0, 0, 0, .65) 100%)
-  // -webkit-gradient(linear, left top, right top, from rgba(0, 0, 0, .5) 0% to rgba(0, 0, 0, .5) 59%)
-  // background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50% rgba(0, 0, 0, 1) 0%)
-  background: rgba(0, 0, 0, .1)
-  color: white
-  width: 15%
-  padding-left: 1em
 
 .sidebar h3
   padding: .5em
@@ -75,6 +95,7 @@ li
   padding: .25em
 
 footer
+  width: 100%
   background-color: #00A896
   text-align: center
   padding: 1em

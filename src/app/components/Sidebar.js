@@ -14,11 +14,15 @@ const linkListItem = (arr) => (arr.map( (item) =>
 export default class Sidebar extends React.Component {
   render () {
     return(
-    <div className="sidebar">
-      <h3>Past Entries</h3>
+    <div className="sidebar div">
+      <div>
+        <h3>Past Entries</h3>
         {linkListItem(months)}
-      <h3>Blog Topics</h3>
+      </div>
+      <div>
+        <h3>Blog Topics</h3>
         {linkListItem(topics)}
+      </div>
     </div>
     );
   }
