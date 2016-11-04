@@ -8,14 +8,23 @@ import Main from './Main';
 import Sidebar from './Sidebar';
 import app from './app.sass';
 import appCss from './appCss.css';
+import blogData from './blogData.json'
+
+console.log(blogData[0].date);
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: blogData
+    }
+  }
   render () {
     return (
       <div>
         <div className='container'>
           <Header />
-          <Main />
+          <Main data={this.state.data}/>
           <Sidebar />
         </div>
         <Footer />
