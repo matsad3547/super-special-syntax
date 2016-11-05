@@ -2,19 +2,47 @@
 
 import React from 'react';
 
-let months = ['October', 'November'];
-let topics = ['Stuff', 'Things'];
-
-const monthList = (month) => console.log(month);
-
 const linkListItem = (arr, monthList) => (arr.map( (item) =>
   <li key={item} onClick={monthList}>
     {item}
   </li>
 ));
 
+function getObjArrProps (arrOfObj, keyVal) {
+  let propArr = [];
+  arrOfObj.map( function(obj){
+    for(let key in obj){
+      if (key === keyVal) {
+        obj[key].map( (item) => propArr.push(item));
+      }
+    }
+  })
+  return propArr;
+};
+
+function rmvDups(arr) {
+  let newArr = [];
+  arr.map( function(item){
+    if (newArr.indexOf(item) === -1) {
+      newArr.push(item);
+    }
+  } )
+  return newArr;
+};
+
 export default class Sidebar extends React.Component {
+
   render () {
+    let dataObj = this.props.data;
+
+    let keywords = getObjArrProps(dataObj, 'tags')
+
+    keywords = rmvDups(keywords);
+
+    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+    const monthList = (month) => console.log('some month');
+
     return(
     <div className="sidebar div">
       <div>
@@ -23,7 +51,7 @@ export default class Sidebar extends React.Component {
       </div>
       <div>
         <h3>Blog Topics</h3>
-        {linkListItem(topics)}
+        {linkListItem(keywords)}
       </div>
     </div>
     );

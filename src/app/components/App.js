@@ -13,19 +13,21 @@ import blogData from './blogData.json'
 console.log(blogData[0].date);
 
 export default class App extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
       data: blogData
     }
   }
+
   render () {
     return (
       <div>
         <div className='container'>
           <Header />
           <Main data={this.state.data}/>
-          <Sidebar />
+          <Sidebar data={this.state.data}/>
         </div>
         <Footer />
       </div>
