@@ -8,6 +8,7 @@ const linkListItem = (arr, monthList) => (arr.map( (item) =>
   </li>
 ));
 
+//gets an array of object properties within a larger object
 function getObjArrProps (arrOfObj, keyVal) {
   let propArr = [];
   arrOfObj.map( function(obj){
@@ -32,8 +33,11 @@ function rmvDups(arr) {
 
 export default class Sidebar extends React.Component {
 
+
   render () {
     let dataObj = this.props.data;
+
+    const monthList = (month) => console.log('some month');
 
     let keywords = getObjArrProps(dataObj, 'tags')
 
@@ -41,7 +45,6 @@ export default class Sidebar extends React.Component {
 
     let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-    const monthList = (month) => console.log('some month');
 
     return(
     <div className="sidebar div">
