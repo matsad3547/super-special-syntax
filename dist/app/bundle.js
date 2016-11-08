@@ -21979,19 +21979,23 @@
 	
 	var _Main2 = _interopRequireDefault(_Main);
 	
-	var _Sidebar = __webpack_require__(/*! ./Sidebar */ 176);
+	var _Sidebar = __webpack_require__(/*! ./Sidebar */ 178);
 	
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 	
-	var _app = __webpack_require__(/*! ./app.sass */ 177);
+	var _app = __webpack_require__(/*! ./app.sass */ 179);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _appCss = __webpack_require__(/*! ./appCss.css */ 182);
+	var _appCss = __webpack_require__(/*! ./appCss.css */ 184);
 	
 	var _appCss2 = _interopRequireDefault(_appCss);
 	
+<<<<<<< HEAD
 	var _blogData = __webpack_require__(/*! ./blogData.json */ 184);
+=======
+	var _blogData = __webpack_require__(/*! ./blogData.json */ 186);
+>>>>>>> single-page-2
 	
 	var _blogData2 = _interopRequireDefault(_blogData);
 	
@@ -22174,6 +22178,14 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _MostRecent = __webpack_require__(/*! ../pages/MostRecent */ 176);
+	
+	var _MostRecent2 = _interopRequireDefault(_MostRecent);
+	
+	var _ByMonth = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../pages/ByMonth\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+	
+	var _ByMonth2 = _interopRequireDefault(_ByMonth);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22182,8 +22194,7 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	var currentBlogTitle = 'Things and Stuff are Neat-o!';
-	var blogDate = 'November 2, 2016';
+	// <ByMonth data={this.props.data}/>
 	
 	var Main = function (_React$Component) {
 	  _inherits(Main, _React$Component);
@@ -22197,6 +22208,58 @@
 	  _createClass(Main, [{
 	    key: 'render',
 	    value: function render() {
+	      return _react2.default.createElement(_ByMonth2.default, { data: this.props.data });
+	    }
+	  }]);
+	
+	  return Main;
+	}(_react2.default.Component);
+	
+	exports.default = Main;
+
+/***/ },
+/* 176 */
+/*!*************************************!*\
+  !*** ./src/app/pages/MostRecent.js ***!
+  \*************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var MostRecent = function (_React$Component) {
+	  _inherits(MostRecent, _React$Component);
+	
+	  function MostRecent() {
+	    _classCallCheck(this, MostRecent);
+	
+	    return _possibleConstructorReturn(this, (MostRecent.__proto__ || Object.getPrototypeOf(MostRecent)).apply(this, arguments));
+	  }
+	
+	  _createClass(MostRecent, [{
+	    key: 'render',
+	    value: function render() {
+	
+	      var data = this.props.data;
+	      var blogDate = data[0].date.join(' ');
+	
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'main div' },
@@ -22206,7 +22269,11 @@
 	          _react2.default.createElement(
 	            'h2',
 	            null,
+<<<<<<< HEAD
 	            this.props.data[0].title
+=======
+	            data[0].title
+>>>>>>> single-page-2
 	          ),
 	          _react2.default.createElement(
 	            'h4',
@@ -22217,7 +22284,11 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'post' },
+<<<<<<< HEAD
 	          this.props.data[0].content.map(function (paragraph, ind) {
+=======
+	          data[0].content.map(function (paragraph, ind) {
+>>>>>>> single-page-2
 	            return _react2.default.createElement(
 	              'p',
 	              { key: ind },
@@ -22229,13 +22300,14 @@
 	    }
 	  }]);
 	
-	  return Main;
+	  return MostRecent;
 	}(_react2.default.Component);
 	
-	exports.default = Main;
+	exports.default = MostRecent;
 
 /***/ },
-/* 176 */
+/* 177 */,
+/* 178 */
 /*!***************************************!*\
   !*** ./src/app/components/Sidebar.js ***!
   \***************************************/
@@ -22271,7 +22343,10 @@
 	  });
 	};
 	
+<<<<<<< HEAD
 	//gets an array of object properties within a larger object
+=======
+>>>>>>> single-page-2
 	function getObjArrProps(arrOfObj, keyVal) {
 	  var propArr = [];
 	  arrOfObj.map(function (obj) {
@@ -22310,16 +22385,26 @@
 	    value: function render() {
 	      var dataObj = this.props.data;
 	
+<<<<<<< HEAD
 	      var monthList = function monthList(month) {
 	        return console.log('some month');
 	      };
 	
+=======
+>>>>>>> single-page-2
 	      var keywords = getObjArrProps(dataObj, 'tags');
 	
 	      keywords = rmvDups(keywords);
 	
 	      var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 	
+<<<<<<< HEAD
+=======
+	      var monthList = function monthList(month) {
+	        return console.log('some month');
+	      };
+	
+>>>>>>> single-page-2
 	      return _react2.default.createElement(
 	        'div',
 	        { className: 'sidebar div' },
@@ -22353,7 +22438,7 @@
 	exports.default = Sidebar;
 
 /***/ },
-/* 177 */
+/* 179 */
 /*!*************************************!*\
   !*** ./src/app/components/app.sass ***!
   \*************************************/
@@ -22362,10 +22447,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 178);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 180);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 181)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 183)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22382,24 +22467,28 @@
 	}
 
 /***/ },
-/* 178 */
+/* 180 */
 /*!********************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/app.sass ***!
   \********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 179)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 181)();
 	// imports
 	exports.push([module.id, "@import url(//fonts.googleapis.com/css?family=Lato:300,400,500);", ""]);
 	
 	// module
+<<<<<<< HEAD
 	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\nh1, h2, h3, h4 {\n  padding: .5em;\n  text-shadow: black 1px 1px; }\n\nh1 {\n  font-size: 2em; }\n\n.container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  align-content: flex-start;\n  align-items: flex-start;\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.jpg */ 180) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center; }\n\n.div {\n  width: 300px;\n  flex-grow: 0;\n  flex-shrink: 0;\n  flex-basis: 0; }\n\n.header {\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 100%;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  height: 8em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 80%;\n  order: 2;\n  color: black;\n  height: 40em;\n  padding-bottom: 1em;\n  margin: 0 3% 0 2%; }\n\n.sidebar {\n  height: 40em;\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 15%;\n  background: rgba(0, 0, 0, 0.1);\n  color: white;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 0 0 1em 1em; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.2);\n  margin-top: 2em; }\n\n.post {\n  line-height: 1.5em;\n  padding: 2em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em;\n  width: 75%; }\n\nli:hover {\n  background-color: #02C39A; }\n\nfooter {\n  width: 100%;\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n\n@media (max-width: 653px) {\n  .sidebar {\n    height: auto;\n    flex-direction: row;\n    order: 3; }\n  .main {\n    height: auto; } }\n", ""]);
+=======
+	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\nh1, h2, h3, h4 {\n  padding: .5em;\n  text-shadow: black 1px 1px; }\n\nh1 {\n  font-size: 2em; }\n\n.container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  align-content: flex-start;\n  align-items: flex-start;\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.jpg */ 182) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center; }\n\n.div {\n  width: 300px;\n  flex-grow: 0;\n  flex-shrink: 0;\n  flex-basis: 0; }\n\n.header {\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 100%;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  height: 8em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 80%;\n  order: 2;\n  color: black;\n  height: 40em;\n  padding-bottom: 1em;\n  margin: 0 3% 0 2%; }\n\n.sidebar {\n  height: 40em;\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 15%;\n  background: rgba(0, 0, 0, 0.1);\n  color: white;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 0 0 1em 1em; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.2);\n  margin-top: 2em; }\n\n.post {\n  line-height: 1.5em;\n  padding: 2em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar h3 {\n  padding: .5em; }\n\nli {\n  list-style: none;\n  padding: .25em;\n  width: 75%; }\n\nli:hover {\n  background-color: #02C39A; }\n\nfooter {\n  width: 100%;\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n\n@media (max-width: 653px) {\n  .sidebar {\n    height: auto;\n    flex-direction: row;\n    order: 3; }\n  .main {\n    height: auto; } }\n", ""]);
+>>>>>>> single-page-2
 	
 	// exports
 
 
 /***/ },
-/* 179 */
+/* 181 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -22458,7 +22547,7 @@
 
 
 /***/ },
-/* 180 */
+/* 182 */
 /*!***********************************!*\
   !*** ./src/app/images/skiing.jpg ***!
   \***********************************/
@@ -22469,7 +22558,7 @@
 	module.exports = __webpack_require__.p + "src/app/images/skiing.jpg?5729823dea";
 
 /***/ },
-/* 181 */
+/* 183 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -22724,7 +22813,7 @@
 
 
 /***/ },
-/* 182 */
+/* 184 */
 /*!***************************************!*\
   !*** ./src/app/components/appCss.css ***!
   \***************************************/
@@ -22733,10 +22822,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./appCss.css */ 183);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./appCss.css */ 185);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 181)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 183)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -22753,13 +22842,13 @@
 	}
 
 /***/ },
-/* 183 */
+/* 185 */
 /*!******************************************************!*\
   !*** ./~/css-loader!./src/app/components/appCss.css ***!
   \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 179)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 181)();
 	// imports
 	
 	
@@ -22770,7 +22859,11 @@
 
 
 /***/ },
+<<<<<<< HEAD
 /* 184 */
+=======
+/* 186 */
+>>>>>>> single-page-2
 /*!******************************************!*\
   !*** ./src/app/components/blogData.json ***!
   \******************************************/
@@ -22779,17 +22872,29 @@
 	"use strict";
 	
 	module.exports = [{
+<<<<<<< HEAD
 		"date": "November",
+=======
+		"date": ["November", 1, 2016],
+>>>>>>> single-page-2
 		"title": "Things are Super Neat-o Keen!",
 		"content": ["Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "Lorem ipsum Tilde +1 mlkshk shoreditch, mixtape humblebrag thundercats. Knausgaard photo booth post-ironic echo park tousled direct trade glossier celiac, cardigan air plant meh butcher fap cliche cold-pressed. Polaroid +1 put a bird on it, dreamcatcher fap slow-carb fam beard seitan. Subway tile af hot chicken sriracha. Intelligentsia jianbing af tote bag keytar try-hard. Quinoa listicle intelligentsia sustainable, tumeric affogato vaporware cold-pressed pitchfork microdosing salvia polaroid kale chips austin. Messenger bag leggings bitters tumblr fashion axe drinking vinegar."],
 		"tags": ["things", "stuff", "cheese"]
 	}, {
+<<<<<<< HEAD
 		"date": "October",
+=======
+		"date": ["October", 15, 2016],
+>>>>>>> single-page-2
 		"title": "Kittens!",
 		"content": ["Lorem ipsum Tilde +1 mlkshk shoreditch, mixtape humblebrag thundercats. Knausgaard photo booth post-ironic echo park tousled direct trade glossier celiac, cardigan air plant meh butcher fap cliche cold-pressed. Polaroid +1 put a bird on it, dreamcatcher fap slow-carb fam beard seitan.", "Subway tile af hot chicken sriracha. Intelligentsia jianbing af tote bag keytar try-hard. Quinoa listicle intelligentsia sustainable, tumeric affogato vaporware cold-pressed pitchfork microdosing salvia polaroid kale chips austin. Messenger bag leggings bitters tumblr fashion axe drinking vinegar.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."],
 		"tags": ["kittens", "puppies", "cheese"]
 	}, {
+<<<<<<< HEAD
 		"date": "October",
+=======
+		"date": ["October", 1, 2016],
+>>>>>>> single-page-2
 		"title": "Boxer Puppies!",
 		"content": ["Lorem ipsum Tilde +1 mlkshk shoreditch, mixtape humblebrag thundercats. Knausgaard photo booth post-ironic echo park tousled direct trade glossier celiac, cardigan air plant meh butcher fap cliche cold-pressed. Polaroid +1 put a bird on it, dreamcatcher fap slow-carb fam beard seitan. Subway tile af hot chicken sriracha. Intelligentsia jianbing af tote bag keytar try-hard. Quinoa listicle intelligentsia sustainable, tumeric affogato vaporware cold-pressed pitchfork microdosing salvia polaroid kale chips austin. Messenger bag leggings bitters tumblr fashion axe drinking vinegar.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."],
 		"tags": ["bikes", "stuff", "doughnuts"]

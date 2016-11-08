@@ -1,6 +1,6 @@
 [
   {
-    "date": "November",
+    "date": ["November", 1, 2016],
     "title": "Things are Super Neat-o Keen!",
   "content": [
     "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
@@ -9,14 +9,14 @@
 
 },
 {
-  "date": "October",
+  "date": ["October", 15, 2016],
   "title": "Kittens!",
-"content": ["Lorem ipsum Tilde +1 mlkshk shoreditch, mixtape humblebrag thundercats. Knausgaard photo booth post-ironic echo park tousled direct trade glossier celiac, cardigan air plant meh butcher fap cliche cold-pressed. Polaroid +1 put a bird on it, dreamcatcher fap slow-carb fam beard seitan.", "Subway tile af hot chicken sriracha. Intelligentsia jianbing af tote bag keytar try-hard. Quinoa listicle intelligentsia sustainable, tumeric affogato vaporware cold-pressed pitchfork microdosing salvia polaroid kale chips austin. Messenger bag leggings bitters tumblr fashion axe drinking vinegar.",
+"content": ["You call this cat food?. Howl uncontrollably for no reason use lap as chair, but meow. Claws in your leg run in circles if it fits, i sits swat at dog, and cat is love, cat is life or poop on grasses. Lay on arms while you're using the keyboard destroy the blinds, but peer out window, chatter at birds, lure them to mouth. Throwup on your pillow destroy the blinds and drink water out of the faucet scratch the box so run outside as soon as door open. Going to catch the red dot today going to catch the red dot today caticus cuteicus and stare at ceiling, for attack the dog then pretend like nothing happened so lick yarn hanging out of own butt present belly, scratch hand when stroked for destroy couch as revenge.", "Lorem ipsum Tilde +1 mlkshk shoreditch, mixtape humblebrag thundercats. Knausgaard photo booth post-ironic echo park tousled direct trade glossier celiac, cardigan air plant meh butcher fap cliche cold-pressed. Polaroid +1 put a bird on it, dreamcatcher fap slow-carb fam beard seitan.", "Subway tile af hot chicken sriracha. Intelligentsia jianbing af tote bag keytar try-hard. Quinoa listicle intelligentsia sustainable, tumeric affogato vaporware cold-pressed pitchfork microdosing salvia polaroid kale chips austin. Messenger bag leggings bitters tumblr fashion axe drinking vinegar.",
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."],
 "tags": ["kittens", "puppies", "cheese"]
 },
 {
-  "date": "October",
+  "date": ["October", 1, 2016],
   "title": "Boxer Puppies!",
 "content": ["Lorem ipsum Tilde +1 mlkshk shoreditch, mixtape humblebrag thundercats. Knausgaard photo booth post-ironic echo park tousled direct trade glossier celiac, cardigan air plant meh butcher fap cliche cold-pressed. Polaroid +1 put a bird on it, dreamcatcher fap slow-carb fam beard seitan. Subway tile af hot chicken sriracha. Intelligentsia jianbing af tote bag keytar try-hard. Quinoa listicle intelligentsia sustainable, tumeric affogato vaporware cold-pressed pitchfork microdosing salvia polaroid kale chips austin. Messenger bag leggings bitters tumblr fashion axe drinking vinegar.",
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."],
