@@ -3,23 +3,10 @@
 import React from 'react';
 
 const linkListItem = (arr, monthList) => (arr.map( (item) =>
-  <li key={item} onClick={monthList}>
+  <li key={item} onClick={monthList} id={item}>
     {item}
   </li>
 ));
-
-//gets an array of object properties within a larger object
-function getObjArrProps (arrOfObj, keyVal) {
-  let propArr = [];
-  arrOfObj.map( function(obj){
-    for(let key in obj){
-      if (key === keyVal) {
-        obj[key].map( (item) => propArr.push(item));
-      }
-    }
-  })
-  return propArr;
-};
 
 function rmvDups(arr) {
   let newArr = [];
@@ -31,20 +18,44 @@ function rmvDups(arr) {
   return newArr;
 };
 
+function getObjMonths (arrOfObj) {
+  let propArr = [];
+  arrOfObj.map( function(obj){
+    for(let key in obj){
+      if (key === 'date') {
+        propArr.push(obj.date[0]);
+      }
+    }
+  })
+  propArr = rmvDups(propArr);
+  return propArr;
+};
+
+//gets an array of object properties within a larger object
+function getObjArrProps (arrOfObj, keyVal) {
+  let propArr = [];
+  arrOfObj.map( function(obj){
+    for(let key in obj){
+      if (key === keyVal) {
+        obj[key].map( (item) => propArr.push(item));
+      }
+    }
+  })
+  propArr = rmvDups(propArr);
+  return propArr;
+};
+
 export default class Sidebar extends React.Component {
 
 
   render () {
     let dataObj = this.props.data;
 
-    const monthList = (month) => console.log('some month');
+    const monthList = (month) => console.log(li.id);
 
     let keywords = getObjArrProps(dataObj, 'tags')
 
-    keywords = rmvDups(keywords);
-
-    let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-
+    let months = getObjMonths(dataObj);
 
     return(
     <div className="sidebar div">
