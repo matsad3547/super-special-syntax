@@ -51,7 +51,7 @@ export default class Sidebar extends React.Component {
   render () {
     let dataObj = this.props.data;
 
-    const monthList = (month) => console.log(li.id);
+    const monthList = (month) => console.log(id);
 
     let keywords = getObjArrProps(dataObj, 'tags')
 
