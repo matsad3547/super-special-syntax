@@ -2,14 +2,13 @@
 
 import React from 'react';
 import MostRecent from '../pages/MostRecent';
-
-let currentBlogTitle = 'Things and Stuff are Neat-o!';
-let blogDate = 'November 2, 2016';
+import ByMonth from '../pages/ByMonth';
+// <ByMonth data={this.props.data}/>
 
 export default class Main extends React.Component {
   render () {
     return(
-      <MostRecent data={this.props.data}/>
+      <ByMonth data={this.props.data}/>
 
     );
   }
