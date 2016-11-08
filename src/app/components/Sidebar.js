@@ -2,14 +2,6 @@
 
 import React from 'react';
 
-const clicker = (clicked_id) => console.log(clicked_id.target.id);
-
-const linkListItem = (arr) => (arr.map( (item) =>
-  <li key={item} onClick={clicker} id={item}>
-    {item}
-  </li>
-));
-
 function rmvDups(arr) {
   let newArr = [];
   arr.map( function(item){
@@ -47,10 +39,33 @@ function getObjArrProps (arrOfObj, keyVal) {
   return propArr;
 };
 
+const linkListItem = (arr, fun) => {arr.map( (item) =>
+  <li key={item} onClick={fun} id={item}>
+    {item}
+  </li>
+)};
+
 export default class Sidebar extends React.Component {
 
+  clicker(clicked_id) {console.log(clicked_id.target.id)};
+
+
+  handleClickMonth(clicked_id){
+  var mainDisp = 1;
+  console.log(clicked_id.target.id);
+  let month = clicked_id.target.id
+  this.props.mainPageChange(mainDisp, null, month);
+};
+
+  handleClickTag(clicked_id){
+  var mainDisp = 2;
+  console.log(clicked_id.target.id);
+  let tag = clicked_id.target.id
+  this.props.mainPageChange(mainDisp, tag);
+  };
 
   render () {
+
     let dataObj = this.props.data;
 
     let keywords = getObjArrProps(dataObj, 'tags')
@@ -61,11 +76,17 @@ export default class Sidebar extends React.Component {
     <div className="sidebar div">
       <div>
         <h3>Past Entries</h3>
-        {linkListItem(months)}
+        {months.map( (month) =>
+          <li key={month} onClick={this.handleClickMonth.bind(this)} id={month}>
+            {month}
+          </li>)}
       </div>
       <div>
         <h3>Blog Topics</h3>
-        {linkListItem(keywords)}
+        {keywords.map( (keyword) =>
+          <li key={keyword} onClick={this.handleClickTag.bind(this)} id={keyword}>
+            {keyword}
+          </li>)}
       </div>
     </div>
     );

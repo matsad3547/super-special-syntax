@@ -31,7 +31,6 @@ export default class ByMonth extends React.Component {
 
   render () {
 
-console.log(this.props.tag);
     let tag = this.props.tag;
 
     let dataByMonth = getObjFromTag(this.props.data, tag);
