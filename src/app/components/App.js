@@ -15,7 +15,9 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       data: blogData,
-      mainDisp: 1
+      mainDisp: 2,
+      tag: 'puppies',
+      month: 'October'
     }
   }
 
@@ -24,7 +26,7 @@ export default class App extends React.Component {
       <div>
         <div className='container'>
           <Header />
-          <Main mainDisp={this.state.mainDisp} data={this.state.data}/>
+          <Main  data={this.state.data} month={this.state.month} tag={this.state.tag} mainDisp={this.state.mainDisp}/>
           <Sidebar data={this.state.data}/>
         </div>
         <Footer />

@@ -13,7 +13,7 @@ const getObjFromTag =  (arrOfPosts, tag) => {
   return arr;
 }
 
-var tag = 'cheese';
+// var tag = 'cheese';
 
 const getDisplayFromArr = arrOfPosts => {
   let outerArr = [];
@@ -30,6 +30,9 @@ const getDisplayFromArr = arrOfPosts => {
 export default class ByMonth extends React.Component {
 
   render () {
+
+console.log(this.props.tag);
+    let tag = this.props.tag;
 
     let dataByMonth = getObjFromTag(this.props.data, tag);
 

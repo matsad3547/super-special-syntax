@@ -13,10 +13,10 @@ export default class Main extends React.Component {
     const ChooseRender = (props) => {
       let mainDisp = this.props.mainDisp;
       if(mainDisp === 1) {
-        return <ByMonth data={this.props.data}/>;
+        return <ByMonth data={this.props.data} month={this.props.month} tag={this.props.tag}/>;
       }
       if (mainDisp === 2) {
-        return <ByTag data={this.props.data}/>;
+        return <ByTag data={this.props.data} month={this.props.month} tag={this.props.tag}/>;
       }
       return <MostRecent data={this.props.data}/>;
     };

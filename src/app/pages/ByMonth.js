@@ -37,8 +37,6 @@ export default class ByMonth extends React.Component {
 
     let displayData = getDisplayFromArr(dataByMonth);
 
-    console.log(displayData);
-
     return(
       <div className='main div'>
         <h3 className='label'>Posts from {month} ...</h3>
