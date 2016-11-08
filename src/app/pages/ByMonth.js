@@ -2,7 +2,6 @@
 
 import React from 'react';
 
-//returns an array of objects corresponding to a particular month
 const getObjFromDate =  (arrOfPosts, month) => {
   let arr = [];
   arrOfPosts.map( function(obj){
@@ -12,8 +11,6 @@ const getObjFromDate =  (arrOfPosts, month) => {
   })
   return arr;
 }
-
-var month = 'October';
 
 const getDisplayFromArr = arrOfPosts => {
   let outerArr = [];
@@ -29,9 +26,9 @@ const getDisplayFromArr = arrOfPosts => {
 
 export default class ByMonth extends React.Component {
 
-
-
   render () {
+
+    var month = this.props.month;
 
     let dataByMonth = getObjFromDate(this.props.data, month);
 

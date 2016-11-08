@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-function rmvDups(arr) {
+const rmvDups = (arr) => {
   let newArr = [];
   arr.map( function(item){
     if (newArr.indexOf(item) === -1) {
@@ -12,7 +12,7 @@ function rmvDups(arr) {
   return newArr;
 };
 
-function getObjMonths (arrOfObj) {
+const getObjMonths = (arrOfObj) => {
   let propArr = [];
   arrOfObj.map( function(obj){
     for(let key in obj){
@@ -25,8 +25,7 @@ function getObjMonths (arrOfObj) {
   return propArr;
 };
 
-//gets an array of object properties within a larger object
-function getObjArrProps (arrOfObj, keyVal) {
+const getObjArrProps = (arrOfObj, keyVal) => {
   let propArr = [];
   arrOfObj.map( function(obj){
     for(let key in obj){
@@ -47,19 +46,14 @@ const linkListItem = (arr, fun) => {arr.map( (item) =>
 
 export default class Sidebar extends React.Component {
 
-  clicker(clicked_id) {console.log(clicked_id.target.id)};
-
-
   handleClickMonth(clicked_id){
   var mainDisp = 1;
-  console.log(clicked_id.target.id);
   let month = clicked_id.target.id
   this.props.mainPageChange(mainDisp, null, month);
 };
 
   handleClickTag(clicked_id){
   var mainDisp = 2;
-  console.log(clicked_id.target.id);
   let tag = clicked_id.target.id
   this.props.mainPageChange(mainDisp, tag);
   };

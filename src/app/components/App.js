@@ -23,9 +23,7 @@ export default class App extends React.Component {
     }
   };
 
-  mainPageChange(mainDispVal, tagVal=0, monthVal) {
-    console.log(monthVal);
-    console.log(tagVal);
+  mainPageChange(mainDispVal, tagVal, monthVal) {
     this.setState({
       mainDisp: mainDispVal,
       tag: tagVal,
