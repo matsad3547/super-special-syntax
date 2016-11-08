@@ -2,12 +2,6 @@
 
 import React from 'react';
 
-<<<<<<< HEAD
-export default class Header extends React.Component {
-  render () {
-    return(
-      <h2>Blog Posts Sorted by Month<h2>
-=======
 //returns an array of objects corresponding to a particular month
 const getObjFromDate =  (arrOfPosts, month) => {
   let arr = [];
@@ -47,6 +41,7 @@ export default class ByMonth extends React.Component {
 
     return(
       <div className='main div'>
+        <h3 className='label'>Posts from {month}...</h3>
       {displayData.map( (arr, ind) =>
         <div key={'parent' + ind}>
         <div className='main-header' key={ind + 'MD'}>
@@ -61,7 +56,6 @@ export default class ByMonth extends React.Component {
         </div>
       )}
       </div>
->>>>>>> single-page-2
     );
   }
 }

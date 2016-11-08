@@ -2,12 +2,6 @@
 
 import React from 'react';
 
-<<<<<<< HEAD
-export default class Header extends React.Component {
-  render () {
-    return(
-      <h2>Most Recent Blog Post<h2>
-=======
 export default class MostRecent extends React.Component {
   render () {
 
@@ -16,6 +10,7 @@ export default class MostRecent extends React.Component {
 
     return(
         <div className='main div'>
+          <h3 className='label'>The latest from Matt...</h3>
           <div className='main-header'>
             <h2>{data[0].title}</h2>
             <h4 className='date'>{blogDate}</h4>
@@ -28,7 +23,6 @@ export default class MostRecent extends React.Component {
             )}
           </div>
         </div>
->>>>>>> single-page-2
     );
   }
 }
