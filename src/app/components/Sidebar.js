@@ -2,8 +2,10 @@
 
 import React from 'react';
 
-const linkListItem = (arr, monthList) => (arr.map( (item) =>
-  <li key={item} onClick={monthList} id={item}>
+const clicker = (clicked_id) => console.log(clicked_id.target.id);
+
+const linkListItem = (arr) => (arr.map( (item) =>
+  <li key={item} onClick={clicker} id={item}>
     {item}
   </li>
 ));
@@ -51,8 +53,6 @@ export default class Sidebar extends React.Component {
   render () {
     let dataObj = this.props.data;
 
-    const monthList = (month) => console.log(id);
-
     let keywords = getObjArrProps(dataObj, 'tags')
 
     let months = getObjMonths(dataObj);
@@ -61,7 +61,7 @@ export default class Sidebar extends React.Component {
     <div className="sidebar div">
       <div>
         <h3>Past Entries</h3>
-        {linkListItem(months, monthList)}
+        {linkListItem(months)}
       </div>
       <div>
         <h3>Blog Topics</h3>

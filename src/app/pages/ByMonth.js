@@ -21,7 +21,7 @@ const getDisplayFromArr = arrOfPosts => {
     let innerArr = [];
     innerArr.push(obj.title);
     innerArr.push(obj.date.join(' '));
-    innerArr.push(((obj.content)[0].split('. '))[0]);
+    innerArr.push(((obj.content)[0].split('. '))[0] + '...');
     outerArr.push(innerArr);
   } )
   return outerArr;
@@ -41,7 +41,7 @@ export default class ByMonth extends React.Component {
 
     return(
       <div className='main div'>
-        <h3 className='label'>Posts from {month}...</h3>
+        <h3 className='label'>Posts from {month} ...</h3>
       {displayData.map( (arr, ind) =>
         <div key={'parent' + ind}>
         <div className='main-header' key={ind + 'MD'}>

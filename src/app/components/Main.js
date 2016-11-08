@@ -6,10 +6,23 @@ import ByMonth from '../pages/ByMonth';
 import ByTag from '../pages/ByTag';
 
 export default class Main extends React.Component {
-  render () {
-    return(
-      <MostRecent data={this.props.data}/>
 
+
+  render () {
+
+    const ChooseRender = (props) => {
+      let mainDisp = this.props.mainDisp;
+      if(mainDisp === 1) {
+        return <ByMonth data={this.props.data}/>;
+      }
+      if (mainDisp === 2) {
+        return <ByTag data={this.props.data}/>;
+      }
+      return <MostRecent data={this.props.data}/>;
+    };
+
+    return(
+    <ChooseRender />
     );
   }
 }

@@ -1,23 +1,21 @@
 "use strict";
 
 import React from 'react';
-
 import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import app from './app.sass';
 import appCss from './appCss.css';
-import blogData from './blogData.json'
-
-console.log(blogData[0].date);
+import blogData from './blogData.json';
 
 export default class App extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      data: blogData
+      data: blogData,
+      mainDisp: 1
     }
   }
 
@@ -26,7 +24,7 @@ export default class App extends React.Component {
       <div>
         <div className='container'>
           <Header />
-          <Main data={this.state.data}/>
+          <Main mainDisp={this.state.mainDisp} data={this.state.data}/>
           <Sidebar data={this.state.data}/>
         </div>
         <Footer />
