@@ -8,7 +8,7 @@ $mainHeight: auto
   box-sizing: border-box
   font-family: 'Lato', sans-serif
 
-h1, h2, h3, h4
+h1, h2, h3, h4, label
   padding: .5em
   text-shadow: black 1px 1px
 
@@ -36,7 +36,6 @@ h1
   flex-basis: 0
 
 .header
-  // order: 1
   flex-grow: 0
   flex-shrink: 1
   flex-basis: 100%
@@ -59,7 +58,7 @@ h1
   padding-bottom: 1em
   margin: 0 3% 0 2%
 
-.sidebar
+.sidebar, .mobile-select-bar
   flex-grow: 1
   flex-shrink: 0
   flex-basis: 15%
@@ -125,15 +124,25 @@ li:hover, button:hover
 li:last-child
   margin-bottom: 4em
 
+.mobile-select-bar
+  padding: 1em
+
 footer
   width: 100%
   background-color: #00A896
   text-align: center
   padding: 1em
 
+@media (min-width: 672px)
+  .mobile-select-bar
+    display: none
+
+
 @media (max-width: 672px)
   .sidebar
     display: none
+
+  .mobile-select-bar
     height: auto
     flex-direction: row
     order: 3

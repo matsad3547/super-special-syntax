@@ -5,6 +5,7 @@ import Footer from './Footer';
 import Header from './Header';
 import Main from './Main';
 import Sidebar from './Sidebar';
+import MobileSelectBar from './MobileSelectBar';
 import app from './app.sass';
 import appCss from './appCss.css';
 import blogData from './blogData.json';
@@ -38,6 +39,7 @@ export default class App extends React.Component {
           <Header mainPageChange={this.mainPageChange.bind(this)}/>
           <Main  data={this.state.data} month={this.state.month} tag={this.state.tag} mainDisp={this.state.mainDisp} />
           <Sidebar data={this.state.data} mainPageChange={this.mainPageChange.bind(this)}/>
+          <MobileSelectBar data={this.state.data} mainPageChange={this.mainPageChange.bind(this)}/>
         </div>
         <Footer />
       </div>

@@ -1,6 +1,7 @@
 var debug = process.env.NODE_ENV !== "production";
 var path = require("path");
 var webpack = require('webpack');
+var $ = require("jquery");
 
 var DIST_DIR = path.resolve(__dirname, "dist");
 var SRC_DIR = path.resolve(__dirname, "src");

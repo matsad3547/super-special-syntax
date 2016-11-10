@@ -25993,15 +25993,19 @@
 	
 	var _Sidebar2 = _interopRequireDefault(_Sidebar);
 	
-	var _app = __webpack_require__(/*! ./app.sass */ 218);
+	var _MobileSelectBar = __webpack_require__(/*! ./MobileSelectBar */ 218);
+	
+	var _MobileSelectBar2 = _interopRequireDefault(_MobileSelectBar);
+	
+	var _app = __webpack_require__(/*! ./app.sass */ 219);
 	
 	var _app2 = _interopRequireDefault(_app);
 	
-	var _appCss = __webpack_require__(/*! ./appCss.css */ 223);
+	var _appCss = __webpack_require__(/*! ./appCss.css */ 224);
 	
 	var _appCss2 = _interopRequireDefault(_appCss);
 	
-	var _blogData = __webpack_require__(/*! ./blogData.json */ 225);
+	var _blogData = __webpack_require__(/*! ./blogData.json */ 226);
 	
 	var _blogData2 = _interopRequireDefault(_blogData);
 	
@@ -26052,7 +26056,8 @@
 	          { className: 'container' },
 	          _react2.default.createElement(_Header2.default, { mainPageChange: this.mainPageChange.bind(this) }),
 	          _react2.default.createElement(_Main2.default, { data: this.state.data, month: this.state.month, tag: this.state.tag, mainDisp: this.state.mainDisp }),
-	          _react2.default.createElement(_Sidebar2.default, { data: this.state.data, mainPageChange: this.mainPageChange.bind(this) })
+	          _react2.default.createElement(_Sidebar2.default, { data: this.state.data, mainPageChange: this.mainPageChange.bind(this) }),
+	          _react2.default.createElement(_MobileSelectBar2.default, { data: this.state.data, mainPageChange: this.mainPageChange.bind(this) })
 	        ),
 	        _react2.default.createElement(_Footer2.default, null)
 	      );
@@ -26333,28 +26338,32 @@
 	        ),
 	        _react2.default.createElement(
 	          'div',
-	          { className: 'main-header' },
+	          { className: 'main-post' },
 	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            data[0].title
+	            'div',
+	            { className: 'main-header' },
+	            _react2.default.createElement(
+	              'h2',
+	              null,
+	              data[0].title
+	            ),
+	            _react2.default.createElement(
+	              'h4',
+	              { className: 'date' },
+	              blogDate
+	            )
 	          ),
 	          _react2.default.createElement(
-	            'h4',
-	            { className: 'date' },
-	            blogDate
+	            'div',
+	            { className: 'post' },
+	            data[0].content.map(function (paragraph, ind) {
+	              return _react2.default.createElement(
+	                'p',
+	                { key: ind },
+	                paragraph
+	              );
+	            })
 	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          { className: 'post' },
-	          data[0].content.map(function (paragraph, ind) {
-	            return _react2.default.createElement(
-	              'p',
-	              { key: ind },
-	              paragraph
-	            );
-	          })
 	        )
 	      );
 	    }
@@ -26446,7 +26455,7 @@
 	        displayData.map(function (arr, ind) {
 	          return _react2.default.createElement(
 	            'div',
-	            { key: 'parent' + ind },
+	            { className: 'main-post', key: 'parent' + ind },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'main-header', key: ind + 'MD' },
@@ -26565,7 +26574,7 @@
 	        displayData.map(function (arr, ind) {
 	          return _react2.default.createElement(
 	            'div',
-	            { key: 'parent' + ind },
+	            { className: 'main-post', key: 'parent' + ind },
 	            _react2.default.createElement(
 	              'div',
 	              { className: 'main-header', key: ind + 'MD' },
@@ -26745,6 +26754,144 @@
 
 /***/ },
 /* 218 */
+/*!***********************************************!*\
+  !*** ./src/app/components/MobileSelectBar.js ***!
+  \***********************************************/
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(/*! react */ 1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var rmvDups = function rmvDups(arr) {
+	  var newArr = [];
+	  arr.map(function (item) {
+	    if (newArr.indexOf(item) === -1) {
+	      newArr.push(item);
+	    }
+	  });
+	  return newArr;
+	};
+	
+	var getObjMonths = function getObjMonths(arrOfObj) {
+	  var propArr = [];
+	  arrOfObj.map(function (obj) {
+	    for (var key in obj) {
+	      if (key === 'date') {
+	        propArr.push(obj.date[0]);
+	      }
+	    }
+	  });
+	  propArr = rmvDups(propArr);
+	  return propArr;
+	};
+	
+	var getObjArrProps = function getObjArrProps(arrOfObj, keyVal) {
+	  var propArr = [];
+	  arrOfObj.map(function (obj) {
+	    for (var key in obj) {
+	      if (key === keyVal) {
+	        obj[key].map(function (item) {
+	          return propArr.push(item);
+	        });
+	      }
+	    }
+	  });
+	  propArr = rmvDups(propArr);
+	  return propArr;
+	};
+	
+	var Sidebar = function (_React$Component) {
+	  _inherits(Sidebar, _React$Component);
+	
+	  function Sidebar() {
+	    _classCallCheck(this, Sidebar);
+	
+	    return _possibleConstructorReturn(this, (Sidebar.__proto__ || Object.getPrototypeOf(Sidebar)).apply(this, arguments));
+	  }
+	
+	  _createClass(Sidebar, [{
+	    key: 'handleClickMonth',
+	    value: function handleClickMonth(clicked_id) {
+	      var mainDisp = 1;
+	      var month = clicked_id.target.id;
+	      this.props.mainPageChange(mainDisp, null, month);
+	    }
+	  }, {
+	    key: 'handleClickTag',
+	    value: function handleClickTag(clicked_id) {
+	      var mainDisp = 2;
+	      var tag = clicked_id.target.id;
+	      this.props.mainPageChange(mainDisp, tag);
+	    }
+	  }, {
+	    key: 'render',
+	    value: function render() {
+	      var _this2 = this;
+	
+	      var dataObj = this.props.data;
+	
+	      var keywords = getObjArrProps(dataObj, 'tags');
+	
+	      var months = getObjMonths(dataObj);
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'mobile-select-bar div' },
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            'Past Entries',
+	            _react2.default.createElement('input', { placeholder: 'Pick a Month', list: 'months' }),
+	            '  '
+	          ),
+	          _react2.default.createElement(
+	            'datalist',
+	            { id: 'months', className: 'datalist' },
+	            months.map(function (month) {
+	              return _react2.default.createElement('option', { key: month, onClick: _this2.handleClickMonth.bind(_this2), id: month, value: month });
+	            })
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          null,
+	          _react2.default.createElement(
+	            'h3',
+	            null,
+	            'Blog Topics'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Sidebar;
+	}(_react2.default.Component);
+	
+	exports.default = Sidebar;
+
+/***/ },
+/* 219 */
 /*!*************************************!*\
   !*** ./src/app/components/app.sass ***!
   \*************************************/
@@ -26753,10 +26900,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 219);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./../../../~/sass-loader!./app.sass */ 220);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 222)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 223)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -26773,24 +26920,24 @@
 	}
 
 /***/ },
-/* 219 */
+/* 220 */
 /*!********************************************************************!*\
   !*** ./~/css-loader!./~/sass-loader!./src/app/components/app.sass ***!
   \********************************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 220)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 221)();
 	// imports
 	exports.push([module.id, "@import url(//fonts.googleapis.com/css?family=Lato:300,400,500);", ""]);
 	
 	// module
-	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\nh1, h2, h3, h4 {\n  padding: .5em;\n  text-shadow: black 1px 1px; }\n\nh1 {\n  font-size: 2em; }\n\n.container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  align-content: flex-start;\n  align-items: flex-start;\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.jpg */ 221) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center; }\n\n.div {\n  width: 300px;\n  flex-grow: 0;\n  flex-shrink: 0;\n  flex-basis: 0; }\n\n.header {\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 100%;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  min-height: 8em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 80%;\n  order: 2;\n  color: black;\n  height: 40em;\n  padding-bottom: 1em;\n  margin: 0 3% 0 2%; }\n\n.sidebar {\n  height: 40em;\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 15%;\n  background: rgba(0, 0, 0, 0.1);\n  color: white;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 0 0 1em 1em; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.2);\n  margin-top: 2em; }\n\n.post {\n  line-height: 1.5em;\n  padding: 2em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar h3 {\n  padding: .5em; }\n\n.label {\n  color: white; }\n\n.button {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  width: auto;\n  padding: .5em; }\n\nbutton {\n  margin: .5em;\n  padding: .25em;\n  font-size: 1.25em;\n  color: white;\n  background-color: #05668d; }\n\nli {\n  list-style: none;\n  padding: .25em;\n  width: 75%; }\n\nli:hover, button:hover {\n  background-color: #02C39A; }\n\nfooter {\n  width: 100%;\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n\n@media (max-width: 653px) {\n  .sidebar {\n    height: auto;\n    flex-direction: row;\n    order: 3; }\n  .main {\n    height: auto; } }\n", ""]);
+	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\nh1, h2, h3, h4, label {\n  padding: .5em;\n  text-shadow: black 1px 1px; }\n\nh1 {\n  font-size: 2em; }\n\n.container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  align-content: flex-start;\n  align-items: flex-start;\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.jpg */ 222) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center;\n  overflow: hidden; }\n\n.div {\n  width: 300px;\n  flex-grow: 0;\n  flex-shrink: 0;\n  flex-basis: 0; }\n\n.header {\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 100%;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  min-height: 8em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 80%;\n  order: 2;\n  color: black;\n  padding-bottom: 1em;\n  margin: 0 3% 0 2%; }\n\n.sidebar, .mobile-select-bar {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 15%;\n  background: rgba(0, 0, 0, 0.1);\n  color: white;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 0 0 1em 1em; }\n\n.main, .sidebar {\n  padding-bottom: 1000em;\n  margin-bottom: -1000em; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.2);\n  margin-top: 2em; }\n\n.main-post:last-child {\n  margin-bottom: 4em; }\n\n.post {\n  line-height: 1.5em;\n  padding: 2em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar h3 {\n  padding: .5em; }\n\n.label {\n  color: white; }\n\n.button {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  width: auto;\n  padding: .5em; }\n\nbutton {\n  margin: .5em;\n  padding: .25em;\n  font-size: 1.25em;\n  color: white;\n  background-color: #05668d; }\n\nli {\n  list-style: none;\n  padding: .25em;\n  width: 75%; }\n\nli:hover, button:hover {\n  background-color: #02C39A; }\n\nli:last-child {\n  margin-bottom: 4em; }\n\n.mobile-select-bar {\n  padding: 1em; }\n\nfooter {\n  width: 100%;\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n\n@media (min-width: 672px) {\n  .mobile-select-bar {\n    display: none; } }\n\n@media (max-width: 672px) {\n  .sidebar {\n    display: none; }\n  .mobile-select-bar {\n    height: auto;\n    flex-direction: row;\n    order: 3; }\n  .main {\n    height: auto; } }\n", ""]);
 	
 	// exports
 
 
 /***/ },
-/* 220 */
+/* 221 */
 /*!**************************************!*\
   !*** ./~/css-loader/lib/css-base.js ***!
   \**************************************/
@@ -26849,7 +26996,7 @@
 
 
 /***/ },
-/* 221 */
+/* 222 */
 /*!***********************************!*\
   !*** ./src/app/images/skiing.jpg ***!
   \***********************************/
@@ -26860,7 +27007,7 @@
 	module.exports = __webpack_require__.p + "src/app/images/skiing.jpg?5729823dea";
 
 /***/ },
-/* 222 */
+/* 223 */
 /*!*************************************!*\
   !*** ./~/style-loader/addStyles.js ***!
   \*************************************/
@@ -27115,7 +27262,7 @@
 
 
 /***/ },
-/* 223 */
+/* 224 */
 /*!***************************************!*\
   !*** ./src/app/components/appCss.css ***!
   \***************************************/
@@ -27124,10 +27271,10 @@
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(/*! !./../../../~/css-loader!./appCss.css */ 224);
+	var content = __webpack_require__(/*! !./../../../~/css-loader!./appCss.css */ 225);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 222)(content, {});
+	var update = __webpack_require__(/*! ./../../../~/style-loader/addStyles.js */ 223)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -27144,13 +27291,13 @@
 	}
 
 /***/ },
-/* 224 */
+/* 225 */
 /*!******************************************************!*\
   !*** ./~/css-loader!./src/app/components/appCss.css ***!
   \******************************************************/
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 220)();
+	exports = module.exports = __webpack_require__(/*! ./../../../~/css-loader/lib/css-base.js */ 221)();
 	// imports
 	
 	
@@ -27161,7 +27308,7 @@
 
 
 /***/ },
-/* 225 */
+/* 226 */
 /*!******************************************!*\
   !*** ./src/app/components/blogData.json ***!
   \******************************************/

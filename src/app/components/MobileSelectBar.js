@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import $ from 'jquery';
 
 const rmvDups = (arr) => {
   let newArr = [];
@@ -52,7 +53,12 @@ export default class Sidebar extends React.Component {
   this.props.mainPageChange(mainDisp, tag);
   };
 
+
   render () {
+
+    $("nav select").change(function() {
+      window.location = $(this).find("option:selected").val();
+    });
 
     let dataObj = this.props.data;
 
@@ -61,20 +67,17 @@ export default class Sidebar extends React.Component {
     let months = getObjMonths(dataObj);
 
     return(
-    <div className="sidebar div">
+    <div className="mobile-select-bar div">
       <div>
-        <h3>Past Entries</h3>
-        {months.map( (month) =>
-          <li key={month} onClick={this.handleClickMonth.bind(this)} id={month}>
-            {month}
-          </li>)}
+        <label>Past Entries<input placeholder= 'Pick a Month' list='months'></input>  </label>
+          <datalist id='months' className='datalist'>
+          {months.map( (month) =>
+            <option key={month} onClick={this.handleClickMonth.bind(this)} id={month} value={month}></option>
+            )}
+          </datalist>
       </div>
       <div>
         <h3>Blog Topics</h3>
-        {keywords.map( (keyword) =>
-          <li key={keyword} onClick={this.handleClickTag.bind(this)} id={keyword}>
-            {keyword}
-          </li>)}
       </div>
     </div>
     );
