@@ -97,6 +97,7 @@ h1
 
 .label
   color: white
+  margin: .25em
 
 .button
   display: flex
@@ -105,7 +106,8 @@ h1
   width: auto
   padding: .5em
 
-button
+.button li
+  display: inline
   margin: .5em
   padding: .25em
   font-size: 1.25em
@@ -121,7 +123,7 @@ li
 li:hover, button:hover
   background-color: #02C39A
 
-li:last-child
+.sidebar li:last-child
   margin-bottom: 4em
 
 .mobile-select-bar
@@ -142,10 +144,16 @@ footer
   .sidebar
     display: none
 
+  a:hover
+    background-color: #02C39A
+
   .mobile-select-bar
     height: auto
     flex-direction: row
-    order: 3
+    // order: 3
 
-  .main
-    height: auto
+  .monthMenu, .tagMenu
+    display: none
+
+  .button li
+    display: block

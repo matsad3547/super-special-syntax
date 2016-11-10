@@ -24,8 +24,10 @@ export default class Header extends React.Component {
           <h4>by Matt Sadauckas</h4>
         </div>
         <div className='button div'>
-          <button id='home' onClick={this.handleClick.bind(this)}>Home</button>
-          <button id='about' onClick={this.handleClick.bind(this)}>About</button>
+          <ul>
+            <li id='home' onClick={this.handleClick.bind(this)}>Home</li>
+            <li id='about' onClick={this.handleClick.bind(this)}>About</li>
+          </ul>
         </div>
       </div>
     );

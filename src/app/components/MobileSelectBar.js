@@ -42,8 +42,10 @@ const getObjArrProps = (arrOfObj, keyVal) => {
 export default class Sidebar extends React.Component {
 
   handleClickMonth(clicked_id){
+    console.log('cheese');
   var mainDisp = 1;
   let month = clicked_id.target.id
+  console.log(month);
   this.props.mainPageChange(mainDisp, null, month);
 };
 
@@ -53,11 +55,34 @@ export default class Sidebar extends React.Component {
   this.props.mainPageChange(mainDisp, tag);
   };
 
+  inputClickMonth(e) {
+    var value = this.attribute.val();
+    var option = this.attributeList.find("[value='" + value + "']");
+    if (option.length > 0) {
+      var id = option.data("id");
+      console.log(id);
+    }
+  }
+
 
   render () {
 
-    $("nav select").change(function() {
-      window.location = $(this).find("option:selected").val();
+    $(document).ready(function() {
+      $('.monthSel').click(function(){
+        console.log('cheese');
+        $('.monthMenu').slideToggle(1000, function(){
+          $(this).toggleClass('.monthMenuExpanded').css('display', '');
+        });
+      });
+    });
+
+    $(document).ready(function() {
+      $('.tagSel').click(function(){
+        console.log('cheese');
+        $('.tagMenu').slideToggle(1000, function(){
+          $(this).toggleClass('.tagMenuExpanded').css('display', '');
+        });
+      });
     });
 
     let dataObj = this.props.data;
@@ -69,17 +94,34 @@ export default class Sidebar extends React.Component {
     return(
     <div className="mobile-select-bar div">
       <div>
-        <label>Past Entries<input placeholder= 'Pick a Month' list='months'></input>  </label>
-          <datalist id='months' className='datalist'>
-          {months.map( (month) =>
-            <option key={month} onClick={this.handleClickMonth.bind(this)} id={month} value={month}></option>
-            )}
-          </datalist>
+        <h3><a className='monthSel'>Past Entries</a></h3>
+        <div className='monthMenu'>
+        {months.map( (month) =>
+          <li  key={month} onClick={this.handleClickMonth.bind(this)} id={month}>
+            {month}
+          </li>)}
+        </div>
       </div>
       <div>
-        <h3>Blog Topics</h3>
+        <h3><a className='tagSel'>Blog Topics</a></h3>
+        <div className='tagMenu'>
+        {keywords.map( (keyword) =>
+          <li  key={keyword} onClick={this.handleClickMonth.bind(this)} id={keyword}>
+            {keyword}
+          </li>)}
+        </div>
       </div>
     </div>
     );
   }
 }
+
+// <div>
+//   <label>Past Entries <input placeholder= 'Pick a Month' list='months' input={this.inputClickMonth.bind(this)}></input>  </label>
+//     <datalist id='months' className='datalist'>
+//     {months.map( (month) =>
+//       <option key={month}  data-id={month} value={month}></option>
+//       )}
+//     </datalist>
+//     <input type='submit' value='Submit' onClick={this.inputClickMonth.bind(this)}></input>
+// </div>
