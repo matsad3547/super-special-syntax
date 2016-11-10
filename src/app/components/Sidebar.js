@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import { BrowserRouter, Match, Miss, Link } from 'react-router'
 
 const rmvDups = (arr) => {
   let newArr = [];
@@ -38,12 +39,6 @@ const getObjArrProps = (arrOfObj, keyVal) => {
   return propArr;
 };
 
-const linkListItem = (arr, fun) => {arr.map( (item) =>
-  <li key={item} onClick={fun} id={item}>
-    {item}
-  </li>
-)};
-
 export default class Sidebar extends React.Component {
 
   handleClickMonth(clicked_id){
@@ -54,6 +49,7 @@ export default class Sidebar extends React.Component {
 
   handleClickTag(clicked_id){
   var mainDisp = 2;
+  console.log('handle click tag: ',clicked_id);
   let tag = clicked_id.target.id
   this.props.mainPageChange(mainDisp, tag);
   };
@@ -70,19 +66,31 @@ export default class Sidebar extends React.Component {
     <div className="sidebar div">
       <div>
         <h3>Past Entries</h3>
+        {/* this is a comment */}
         {months.map( (month) =>
-          <li key={month} onClick={this.handleClickMonth.bind(this)} id={month}>
+          <li key={month} onClick={this.handleClickMonth.bind(this)} id={month}><Link to='/ByMonth/'>
             {month}
-          </li>)}
+          </Link></li>)}
       </div>
       <div>
         <h3>Blog Topics</h3>
         {keywords.map( (keyword) =>
-          <li key={keyword} onClick={this.handleClickTag.bind(this)} id={keyword}>
+          <li key={keyword} onClick={this.handleClickTag.bind(this)} id={keyword}><Link to='/ByTag'>
             {keyword}
-          </li>)}
+          </Link></li>)}
       </div>
     </div>
     );
   }
 }
+// <Match pattern='/ByMonth' component={ByMonth}/>
+
+// {months.map( (month) =>
+//   <li key={month} onClick={this.handleClickMonth.bind(this)} id={month}>
+//     {month}
+//   </li>)}
+
+// {keywords.map( (keyword) =>
+//   <li key={keyword} onClick={this.handleClickTag.bind(this)} id={keyword}>
+//     {keyword}
+//   </li>)}

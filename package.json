@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "webpack -d && cp src/index.html dist/index.html && cp -R src/app/images dist/app && webpack-dev-server --content-base src/ --inline --hot",
-    "postinstall": "webpack -p && cp src/index.html dist/index.html && cp -R src/app/images dist/app"
+    "postinstall": "webpack -p && cp src/index.html dist/index.html && cp -R src/app/images dist/app",
+    "prod:start": "npm run postinstall && npm run copy && npm start"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,7 @@
     "react-autocomplete-cli": "0.0.3",
     "react-dom": "^15.3.2",
     "react-hot-loader": "^3.0.0-beta.6",
-    "react-router": "^3.0.0",
+    "react-router": "^4.0.0-alpha.5",
     "sass-loader": "^4.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.3",

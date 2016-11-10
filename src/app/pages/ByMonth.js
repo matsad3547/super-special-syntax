@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const getObjFromDate =  (arrOfPosts, month) => {
+const getObjFromDate = (arrOfPosts, month) => {
   let arr = [];
   arrOfPosts.map( function(obj){
     if (obj.date.includes(month)){

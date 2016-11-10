@@ -1,6 +1,7 @@
 'use strict';
 
 import React from 'react';
+import { BrowserRouter as Router, Link, Match, Miss } from 'react-router';
 
 export default class Header extends React.Component {
 
@@ -24,8 +25,8 @@ export default class Header extends React.Component {
           <h4>by Matt Sadauckas</h4>
         </div>
         <div className='button div'>
-          <button id='home' onClick={this.handleClick.bind(this)}>Home</button>
-          <button id='about' onClick={this.handleClick.bind(this)}>About</button>
+          <button id='home' onClick={this.handleClick.bind(this)}><Link to='/'>Home</Link></button>
+          <button id='about' onClick={this.handleClick.bind(this)}><Link to='/about/'>About</Link></button>
         </div>
       </div>
     );
