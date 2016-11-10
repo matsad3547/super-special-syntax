@@ -1,4 +1,4 @@
-$columnHeight: 40em
+$mainHeight: auto
 
 @import url(//fonts.googleapis.com/css?family=Lato:300,400,500)
 
@@ -27,6 +27,7 @@ h1
   background-size: cover
   background-attachment: fixed
   background-position: center
+  overflow: hidden
 
 .div
   width: 300px
@@ -55,22 +56,23 @@ h1
   flex-basis: 80%
   order: 2
   color: black
-  height: $columnHeight
   padding-bottom: 1em
   margin: 0 3% 0 2%
 
 .sidebar
-  height: $columnHeight
   flex-grow: 1
   flex-shrink: 0
   flex-basis: 15%
-  // order: 2
   background: rgba(0, 0, 0, .1)
   color: white
   display: flex
   flex-direction: column
   flex-wrap: wrap
   padding: 0 0 1em 1em
+
+.main, .sidebar
+  padding-bottom: 1000em
+  margin-bottom: -1000em
 
 .main-header
   display: flex
@@ -81,6 +83,9 @@ h1
   color: white
   background-color: rgba(0, 0, 0, .2)
   margin-top: 2em
+
+.main-post:last-child
+  margin-bottom: 4em
 
 .post
   line-height: 1.5em
@@ -117,14 +122,18 @@ li
 li:hover, button:hover
   background-color: #02C39A
 
+li:last-child
+  margin-bottom: 4em
+
 footer
   width: 100%
   background-color: #00A896
   text-align: center
   padding: 1em
 
-@media (max-width: 653px)
+@media (max-width: 672px)
   .sidebar
+    display: none
     height: auto
     flex-direction: row
     order: 3

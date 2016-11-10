@@ -38,16 +38,16 @@ export default class ByMonth extends React.Component {
       <div className='main div'>
         <h3 className='label'>Posts from {month} ...</h3>
       {displayData.map( (arr, ind) =>
-        <div key={'parent' + ind}>
-        <div className='main-header' key={ind + 'MD'}>
-          <h2 key={ind + 'A'}>{arr[0]}</h2>
-          <h4 className='date' key={ind + 'B'}>{arr[1]}</h4>
-        </div>
-        <div className='post' key={'post' + ind}>
-          <p key={ind + 'C'}>
-              {arr[2]}
-            </p>
-        </div>
+        <div className='main-post' key={'parent' + ind} >
+          <div className='main-header' key={ind + 'MD'}>
+            <h2 key={ind + 'A'}>{arr[0]}</h2>
+            <h4 className='date' key={ind + 'B'}>{arr[1]}</h4>
+          </div>
+          <div className='post' key={'post' + ind}>
+            <p key={ind + 'C'}>
+                {arr[2]}
+              </p>
+          </div>
         </div>
       )}
       </div>
