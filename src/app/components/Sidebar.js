@@ -1,6 +1,8 @@
 'use strict';
 
 import React from 'react';
+import StdSearch from '../pages/StdSearch';
+import MobileSearch from '../pages/MobileSearch';
 
 const rmvDups = (arr) => {
   let newArr = [];
@@ -40,19 +42,20 @@ const getObjArrProps = (arrOfObj, keyVal) => {
 
 export default class Sidebar extends React.Component {
 
-  handleClickMonth(clicked_id){
-  var mainDisp = 1;
-  let month = clicked_id.target.id
-  this.props.mainPageChange(mainDisp, null, month);
-};
-
-  handleClickTag(clicked_id){
-  var mainDisp = 2;
-  let tag = clicked_id.target.id
-  this.props.mainPageChange(mainDisp, tag);
-  };
 
   render () {
+
+    const handleClickMonth = (clicked_id) => {
+      var mainDisp = 1;
+      let month = clicked_id.target.id
+      this.props.mainPageChange(mainDisp, null, month);
+    };
+
+    const handleClickTag = (clicked_id) => {
+      var mainDisp = 2;
+      let tag = clicked_id.target.id
+      this.props.mainPageChange(mainDisp, tag);
+    };
 
     let dataObj = this.props.data;
 
@@ -61,22 +64,19 @@ export default class Sidebar extends React.Component {
     let months = getObjMonths(dataObj);
 
     return(
-    <div className="sidebar div">
-      <div>
-        <h3>Past Entries</h3>
-        {months.map( (month) =>
-          <li key={month} onClick={this.handleClickMonth.bind(this)} id={month}>
-            {month}
-          </li>)}
+      <div className="sidebar div">
+        <StdSearch
+          keywords={keywords}
+          months={months}
+          handleClickMonth={handleClickMonth}
+          handleClickTag={handleClickTag} mainPageChange={this.props.mainPageChange}/>
+        <MobileSearch
+          keywords={keywords}
+          months={months}
+          handleClickMonth={handleClickMonth}
+          handleClickTag={handleClickTag}
+          mainPageChange={this.props.mainPageChange}/>
       </div>
-      <div>
-        <h3>Blog Topics</h3>
-        {keywords.map( (keyword) =>
-          <li key={keyword} onClick={this.handleClickTag.bind(this)} id={keyword}>
-            {keyword}
-          </li>)}
-      </div>
-    </div>
     );
   }
 }

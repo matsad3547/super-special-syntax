@@ -42,7 +42,6 @@ const getObjArrProps = (arrOfObj, keyVal) => {
 export default class Sidebar extends React.Component {
 
   handleClickMonth(clicked_id){
-    console.log('cheese');
   var mainDisp = 1;
   let month = clicked_id.target.id
   console.log(month);
@@ -52,6 +51,10 @@ export default class Sidebar extends React.Component {
   handleClickTag(clicked_id){
   var mainDisp = 2;
   let tag = clicked_id.target.id
+  // $('.tagMenu').slideToggle(1000, function(){
+  //   console.log('cheese');
+  //   // $(this).toggleClass('.tagMenuExpanded').css('display', '');
+  // });
   this.props.mainPageChange(mainDisp, tag);
   };
 
@@ -69,18 +72,16 @@ export default class Sidebar extends React.Component {
 
     $(document).ready(function() {
       $('.monthSel').click(function(){
-        console.log('cheese');
-        $('.monthMenu').slideToggle(1000, function(){
-          $(this).toggleClass('.monthMenuExpanded').css('display', '');
+        $('.monthMenu').slideToggle(400, function(){
+          $(this).toggleClass('.monthMenu').css('display', '');
         });
       });
     });
 
     $(document).ready(function() {
       $('.tagSel').click(function(){
-        console.log('cheese');
         $('.tagMenu').slideToggle(1000, function(){
-          $(this).toggleClass('.tagMenuExpanded').css('display', '');
+          // $(this).toggleClass('.tagMenuExpanded').css('display', '');
         });
       });
     });
