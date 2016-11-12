@@ -15,7 +15,7 @@ export default class ByMonth extends React.Component {
             <h2>Contact</h2>
           </div>
           <div className='post'>
-            <p>Check out my github page right <a href='https://github.com/matsad3547' target='blank'>here.</a></p>
+            <p>Check out my github page right <a href='https://github.com/matsad3547' target='blank'>here</a> and I'm on <a href='https://twitter.com/matsad111' target='blank'>twitter.</a></p>
           </div>
         </div>
       </div>

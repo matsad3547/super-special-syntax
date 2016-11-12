@@ -21,15 +21,17 @@ export default class App extends React.Component {
       mainDisp: initDisp,
       data: blogData,
       tag: null,
-      month: null
+      month: null,
+      blogDisplayed: null
     }
   };
 
-  mainPageChange(mainDispVal, tagVal, monthVal) {
+  mainPageChange(mainDispVal, tagVal, monthVal, blogDisp) {
     this.setState({
       mainDisp: mainDispVal,
       tag: tagVal,
-      month: monthVal
+      month: monthVal,
+      blogDisplayed: blogDisp
     })
   };
 
@@ -38,7 +40,7 @@ export default class App extends React.Component {
       <div>
         <div className='container'>
           <Header mainPageChange={this.mainPageChange.bind(this)}/>
-          <Main  data={this.state.data} month={this.state.month} tag={this.state.tag} mainDisp={this.state.mainDisp} />
+          <Main  data={this.state.data} month={this.state.month} tag={this.state.tag} blogDisplayed={this.state.blogDisplayed} mainDisp={this.state.mainDisp} mainPageChange={this.mainPageChange.bind(this)}/>
           <Sidebar data={this.state.data} mainPageChange={this.mainPageChange.bind(this)}/>
         </div>
         <Footer />

@@ -1,19 +1,25 @@
 'use strict';
 
 import React from 'react';
+//
+//TODO Make date processing work well
+// const displayDate = (dateArr) => {
+//   let arr = dateArr;
+//   arr[1] += ',';
+//   arr.join(' ')
+//   return arr;
+// }
 
-//returns an array of objects corresponding to a particular month
 const getObjFromTag =  (arrOfPosts, tag) => {
   let arr = [];
-  arrOfPosts.map( function(obj){
+  arrOfPosts.map( function(obj, ind){
     if (obj.tags.includes(tag)){
+      obj.id = ind;
       arr.push(obj);
     }
   })
   return arr;
 }
-
-// var tag = 'cheese';
 
 const getDisplayFromArr = arrOfPosts => {
   let outerArr = [];
@@ -22,6 +28,7 @@ const getDisplayFromArr = arrOfPosts => {
     innerArr.push(obj.title);
     innerArr.push(obj.date.join(' '));
     innerArr.push(((obj.content)[0].split('. '))[0]);
+    innerArr.push(obj.id);
     outerArr.push(innerArr);
   } )
   return outerArr;
@@ -43,7 +50,7 @@ export default class ByMonth extends React.Component {
       {displayData.map( (arr, ind) =>
         <div className='main-post' key={'parent' + ind} >
           <div className='main-header' key={ind + 'MD'}>
-            <h2 key={ind + 'A'}>{arr[0]}</h2>
+            <h2 className='clickable' key={ind + 'A'} onClick={this.props.handleClickDispBlog} id={arr[3]}>{arr[0]}</h2>
             <h4 className='date' key={ind + 'B'}>{arr[1]}</h4>
           </div>
           <div className='post' key={'post' + ind}>
