@@ -1,8 +1,8 @@
 'use strict';
 
 import React from 'react';
-import StdSearch from '../pages/StdSearch';
-import MobileSearch from '../pages/MobileSearch';
+import StdSearch from './filters/StdSearch';
+import MobileSearch from './filters/MobileSearch';
 
 const rmvDups = (arr) => {
   let newArr = [];

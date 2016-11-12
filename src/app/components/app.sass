@@ -98,21 +98,13 @@ h1
   color: white
   margin: .25em
 
-.button
-  display: flex
-  flex-direction: row
-  flex-wrap: wrap
-  width: auto
-  padding: .5em
-
-.button li
+.button li, .menu
   display: block
   margin: .5em
   padding: .25em
   font-size: 1.25em
   color: white
   background-color: rgba(5, 102, 141, .8)
-
 
 li
   list-style: none
@@ -123,7 +115,7 @@ li:hover, button:hover
   background-color: #02C39A
 
 .sidebar li:last-child
-  margin-bottom: 4em
+  margin-bottom: 2em
 
 .mobile-select-bar
   padding: 1em
@@ -134,10 +126,15 @@ footer
   text-align: center
   padding: 1em
 
+.menu-btn
+  font-size: 1.25
+
 @media (min-width: 672px)
   .mobile-search
     display: none
 
+  .menu
+    display: none
 
 @media (max-width: 672px)
   .sidebar
@@ -146,7 +143,6 @@ footer
 
   .sidebar li:last-child
     margin-bottom: .5em
-
 
   .std-search
     display: none
@@ -160,11 +156,15 @@ footer
     flex-direction: row
     overflow: visible
 
-  .monthMenu, .tagMenu
+  .monthMenu, .tagMenu, .menu-items
     display: none
 
   .monthMenu li
     border-bottom: 2px, solid, rgba(0, 0, 0, 1)
 
-  .button li
-    display: inline
+  // .button
+  //   order: 3
+
+  // .button li
+  //   display: none
+    // display: inline

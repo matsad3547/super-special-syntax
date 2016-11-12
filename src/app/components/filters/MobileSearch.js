@@ -33,7 +33,7 @@ export default class Sidebar extends React.Component {
         <h3><a className='monthSel'>Past Entries</a></h3>
         <div className='monthMenu sel'>
         {months.map( (month) =>
-          <li  key={month} className='li' onClick={this.props.handleClickMonth} id={month}>
+          <li  key={month} onClick={this.props.handleClickMonth} id={month}>
             {month}
           </li>)}
         </div>

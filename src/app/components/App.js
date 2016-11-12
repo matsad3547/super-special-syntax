@@ -6,8 +6,10 @@ import Header from './Header';
 import Main from './Main';
 import Sidebar from './Sidebar';
 import app from './app.sass';
+// import app from '../styles/app.sass';
 import appCss from './appCss.css';
-import blogData from './blogData.json';
+// import appCss from '../styles/appCss.css';
+import blogData from '../blogData.json';
 
 export default class App extends React.Component {
 
