@@ -37,7 +37,7 @@ export default class Header extends React.Component {
           <h4>by Matt Sadauckas</h4>
         </div>
         <div className='button div'>
-          <div className='menu-btn'><a className='menu'>&#9776;</a>
+          <div className='menu-btn'><a className='menu'><i className="fa fa-bars" aria-hidden="true"></i></a>
           </div>
           <ul className='menu-items'>
             <li id='home' onClick={this.handleClick.bind(this)}>Home</li>

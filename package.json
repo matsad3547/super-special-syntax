@@ -25,6 +25,7 @@
     "file-loader": "^0.9.0",
     "jquery": "^3.1.1",
     "json-loader": "^0.5.4",
+    "lodash": "^4.16.6",
     "node-sass": "^3.10.1",
     "react": "^15.3.2",
     "react-autocomplete-cli": "0.0.3",

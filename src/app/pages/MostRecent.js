@@ -5,8 +5,9 @@ import React from 'react';
 export default class MostRecent extends React.Component {
   render () {
 
+    const displayDate = this.props.displayDate;
+
     let data = this.props.data;
-    let blogDate = data[0].date.join(' ');
 
     return(
         <div className='main div'>
@@ -14,7 +15,7 @@ export default class MostRecent extends React.Component {
           <div className='main-post'>
             <div className='main-header'>
               <h2>{data[0].title}</h2>
-              <h4 className='date'>{blogDate}</h4>
+              <h4 className='date'>{displayDate(data[0].date)}</h4>
             </div>
             <div className='post'>
               {data[0].content.map( (paragraph, ind) =>

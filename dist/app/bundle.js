@@ -27277,7 +27277,7 @@
 	            _react2.default.createElement(
 	              'a',
 	              { className: 'menu' },
-	              '\u2630'
+	              _react2.default.createElement('i', { className: 'fa fa-bars', 'aria-hidden': 'true' })
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -37955,10 +37955,14 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	//
+	//TODO Make date processing work well
 	var displayDate = function displayDate(dateArr) {
 	  var arr = dateArr;
-	  arr[1] += ',';
+	  console.log(arr);
+	  if (!arr[1].includes(',')) arr[1] += ',';
 	  arr.join(' ');
+	  console.log(arr);
 	  return arr;
 	};
 	
@@ -37981,7 +37985,6 @@
 	    innerArr.push(obj.date);
 	    innerArr.push(obj.content[0].split('. ')[0]);
 	    innerArr.push(obj.id);
-	    console.log(innerArr);
 	    outerArr.push(innerArr);
 	  });
 	  return outerArr;
@@ -38601,7 +38604,7 @@
 	exports.push([module.id, "@import url(//fonts.googleapis.com/css?family=Lato:300,400,500);", ""]);
 	
 	// module
-	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\nh1, h2, h3, h4, label {\n  padding: .5em;\n  text-shadow: black 1px 1px; }\n\nh1 {\n  font-size: 2em; }\n\n.container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  align-content: flex-start;\n  align-items: flex-start;\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.jpg */ 244) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center;\n  overflow: hidden; }\n\n.div {\n  width: 300px;\n  flex-grow: 0;\n  flex-shrink: 0;\n  flex-basis: 0; }\n\n.header {\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 100%;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  min-height: 8em;\n  padding: .5em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 80%;\n  order: 2;\n  color: black;\n  padding-bottom: 1em;\n  margin: 0 3% 0 2%; }\n\n.sidebar, .mobile-select-bar {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 15%;\n  background: rgba(0, 0, 0, 0.1);\n  color: white;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 1em 0 1em 1em; }\n\n.main, .sidebar {\n  padding-bottom: 1000em;\n  margin-bottom: -1000em; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.2);\n  margin-top: 2em; }\n\n.main-post:last-child {\n  margin-bottom: 4em; }\n\n.post {\n  line-height: 1.5em;\n  padding: 2em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar h3 {\n  padding: .5em; }\n\n.label {\n  color: white;\n  margin: .25em; }\n\n.button li, .menu {\n  display: block;\n  margin: .5em;\n  padding: .25em;\n  font-size: 1.25em;\n  color: white;\n  background-color: rgba(5, 102, 141, 0.8); }\n\nli {\n  list-style: none;\n  padding: .25em;\n  width: 75%;\n  text-shadow: black 1px 1px; }\n\nli:hover, button:hover, .clickable:hover {\n  background-color: #02C39A;\n  text-decoration: underline; }\n\n.sidebar li:last-child {\n  margin-bottom: 2em; }\n\n.mobile-select-bar {\n  padding: 1em; }\n\nfooter {\n  width: 100%;\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n\n.menu-btn {\n  font-size: 1.25; }\n\n@media (min-width: 672px) {\n  .mobile-search {\n    display: none; }\n  .menu {\n    display: none; } }\n\n@media (max-width: 672px) {\n  .sidebar {\n    margin-bottom: 0;\n    padding-bottom: 1em; }\n  .sidebar li:last-child {\n    margin-bottom: .5em; }\n  .std-search {\n    display: none; }\n  a:hover {\n    background-color: #02C39A; }\n  .mobile-search {\n    height: auto;\n    display: flex;\n    flex-direction: row;\n    overflow: visible; }\n  .monthMenu, .tagMenu, .menu-items {\n    display: none; }\n  .monthMenu li {\n    border-bottom: 2px, solid, black; } }\n", ""]);
+	exports.push([module.id, "* {\n  padding: 0;\n  margin: 0;\n  box-sizing: border-box;\n  font-family: 'Lato', sans-serif; }\n\nh1, h2, h3, h4, label {\n  padding: .1em;\n  margin: .4em;\n  text-shadow: black 1px 1px; }\n\nh1 {\n  font-size: 2em; }\n\n.container {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: flex-start;\n  align-content: flex-start;\n  align-items: flex-start;\n  background-image: url(" + __webpack_require__(/*! ../images/skiing.jpg */ 244) + ");\n  background-repeat: no-repeat;\n  background-size: cover;\n  background-attachment: fixed;\n  background-position: center;\n  overflow: hidden; }\n\n.div {\n  width: 300px;\n  flex-grow: 0;\n  flex-shrink: 0;\n  flex-basis: 0; }\n\n.header {\n  flex-grow: 0;\n  flex-shrink: 1;\n  flex-basis: 100%;\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-content: center;\n  align-items: baseline;\n  min-height: 8em;\n  padding: .5em;\n  background-color: rgba(5, 102, 141, 0.6);\n  color: white; }\n\n.main {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 80%;\n  order: 2;\n  color: black;\n  padding-bottom: 1em;\n  margin: 0 3% 0 2%; }\n\n.sidebar, .mobile-select-bar {\n  flex-grow: 1;\n  flex-shrink: 0;\n  flex-basis: 15%;\n  background: rgba(0, 0, 0, 0.1);\n  color: white;\n  display: flex;\n  flex-direction: column;\n  flex-wrap: wrap;\n  padding: 1em 0 1em 1em; }\n\n.main, .sidebar {\n  padding-bottom: 1000em;\n  margin-bottom: -1000em; }\n\n.main-header {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  justify-content: space-between;\n  align-items: baseline;\n  color: white;\n  background-color: rgba(0, 0, 0, 0.2);\n  margin-top: 2em; }\n\n.main-post:last-child {\n  margin-bottom: 4em; }\n\n.post {\n  line-height: 1.5em;\n  padding: 2em;\n  background-color: white;\n  border-radius: 5px; }\n\n.sidebar h3 {\n  padding: .5em; }\n\n.label {\n  color: white;\n  margin: .25em; }\n\n.button li, .menu {\n  display: block;\n  margin: .5em;\n  padding: .25em;\n  font-size: 1.25em;\n  color: white;\n  background-color: rgba(5, 102, 141, 0.8); }\n\nli {\n  list-style: none;\n  padding: .25em;\n  width: 75%;\n  text-shadow: black 1px 1px; }\n\nli:hover, button:hover, .clickable:hover {\n  background-color: #02C39A;\n  text-decoration: underline; }\n\n.sidebar li:last-child {\n  margin-bottom: 2em; }\n\n.mobile-select-bar {\n  padding: 1em; }\n  .mobile-select-bar .menu-btn {\n    font-size: 1.25; }\n\nfooter {\n  width: 100%;\n  background-color: #00A896;\n  text-align: center;\n  padding: 1em; }\n\n@media (min-width: 672px) {\n  .mobile-search {\n    display: none; }\n  .menu {\n    display: none; } }\n\n@media (max-width: 672px) {\n  .sidebar {\n    margin-bottom: 0;\n    padding-bottom: 1em; }\n  .sidebar li:last-child {\n    margin-bottom: .5em; }\n  .std-search {\n    display: none; }\n  a:hover {\n    background-color: #02C39A; }\n  .mobile-search {\n    height: auto;\n    display: flex;\n    flex-direction: row;\n    overflow: visible; }\n  .monthMenu, .tagMenu, .menu-items {\n    display: none; }\n  .monthMenu li {\n    border: 2px, solid, #646464; } }\n", ""]);
 	
 	// exports
 
