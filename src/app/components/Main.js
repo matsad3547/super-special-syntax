@@ -15,10 +15,21 @@ export default class Main extends React.Component {
   render () {
 
     const displayDate = (dateArr) => {
-      let arr = dateArr;
-      if (!_.isString(arr[1])) arr[1] += ',';
-      arr = arr.join(' ')
-      return arr;
+      let dateStr = dateArr.reduce( (str, curVal, i, arr) => {return str + curVal + (i === arr.length - 2 ? ', ' : ' ')}, '')
+      return dateStr;
+    };
+
+    const getDisplayFromArr = arrOfPosts => {
+      let outerArr = [];
+      arrOfPosts.map( (obj) => {
+        let innerArr = [];
+        innerArr.push(obj.title);
+        innerArr.push(obj.date);
+        innerArr.push(((obj.content)[0].split('. '))[0] + '...');
+        innerArr.push(obj.id);
+        outerArr.push(innerArr);
+      } )
+      return outerArr;
     }
 
     const handleClickDispBlog = (clicked_id) => {
@@ -31,10 +42,12 @@ export default class Main extends React.Component {
     const ChooseRender = (props) => {
       let mainDisp = this.props.mainDisp;
       if(mainDisp === 1) {
-        return <ByMonth data={this.props.data} month={this.props.month} displayDate={displayDate} handleClickDispBlog={handleClickDispBlog}/>;
+        return <ByMonth data={this.props.data} month={this.props.month} displayDate={displayDate}
+        getDisplayFromArr={getDisplayFromArr} handleClickDispBlog={handleClickDispBlog}/>;
       }
       else if (mainDisp === 2) {
-        return <ByTag data={this.props.data} tag={this.props.tag} displayDate={displayDate} handleClickDispBlog={handleClickDispBlog}/>;
+        return <ByTag data={this.props.data} tag={this.props.tag} displayDate={displayDate}
+        getDisplayFromArr={getDisplayFromArr} handleClickDispBlog={handleClickDispBlog}/>;
       }
       else if (mainDisp === 3) {
         return <About />;

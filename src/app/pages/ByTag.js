@@ -3,13 +3,6 @@
 import React from 'react';
 import _ from 'lodash';
 
-// const displayDate = (dateArr) => {
-//   let arr = dateArr;
-//   if (!_.isString(arr[1])) arr[1] += ',';
-//   arr = arr.join(' ')
-//   return arr;
-// }
-
 const getObjFromTag =  (arrOfPosts, tag) => {
   let arr = [];
   arrOfPosts.map( function(obj, ind){
@@ -21,30 +14,19 @@ const getObjFromTag =  (arrOfPosts, tag) => {
   return arr;
 }
 
-const getDisplayFromArr = arrOfPosts => {
-  let outerArr = [];
-  arrOfPosts.map( (obj) => {
-    let innerArr = [];
-    innerArr.push(obj.title);
-    innerArr.push(obj.date);
-    innerArr.push(((obj.content)[0].split('. '))[0]);
-    innerArr.push(obj.id);
-    outerArr.push(innerArr);
-  } )
-  return outerArr;
-}
-
 export default class ByMonth extends React.Component {
 
   render () {
 
     const displayDate = this.props.displayDate;
 
+    const getDisplayFromArr = this.props.getDisplayFromArr;
+
     let tag = this.props.tag;
 
-    let dataByMonth = getObjFromTag(this.props.data, tag);
+    let dataByTag = getObjFromTag(this.props.data, tag);
 
-    let displayData = getDisplayFromArr(dataByMonth);
+    let displayData = getDisplayFromArr(dataByTag);
 
     return(
       <div className='main div'>

@@ -13,24 +13,13 @@ const getObjFromDate =  (arrOfPosts, month) => {
   return arr;
 }
 
-const getDisplayFromArr = arrOfPosts => {
-  let outerArr = [];
-  arrOfPosts.map( (obj) => {
-    let innerArr = [];
-    innerArr.push(obj.title);
-    innerArr.push(obj.date);
-    innerArr.push(((obj.content)[0].split('. '))[0] + '...');
-    innerArr.push(obj.id);
-    outerArr.push(innerArr);
-  } )
-  return outerArr;
-}
-
 export default class ByMonth extends React.Component {
 
   render () {
 
     const displayDate = this.props.displayDate;
+
+    const getDisplayFromArr = this.props.getDisplayFromArr;
 
     var month = this.props.month;
 
