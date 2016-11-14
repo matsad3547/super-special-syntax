@@ -15,29 +15,21 @@ const rmvDups = (arr) => {
 };
 
 const getObjMonths = (arrOfObj) => {
-  let propArr = [];
-  arrOfObj.map( function(obj){
-    for(let key in obj){
-      if (key === 'date') {
-        propArr.push(obj.date[0]);
-      }
-    }
+  let monthArr = [];
+  arrOfObj.map( (obj) => {
+    monthArr.push(obj.date[0]);
   })
-  propArr = rmvDups(propArr);
-  return propArr;
+  monthArr = rmvDups(monthArr);
+  return monthArr;
 };
 
 const getObjArrProps = (arrOfObj, keyVal) => {
-  let propArr = [];
-  arrOfObj.map( function(obj){
-    for(let key in obj){
-      if (key === keyVal) {
-        obj[key].map( (item) => propArr.push(item));
-      }
-    }
+  let tagArr = [];
+  arrOfObj.map( (obj) => {
+    obj[keyVal].map( (item) => tagArr.push(item));
   })
-  propArr = rmvDups(propArr);
-  return propArr;
+  tagArr = rmvDups(tagArr);
+  return tagArr;
 };
 
 export default class Sidebar extends React.Component {

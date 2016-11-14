@@ -37608,25 +37608,39 @@
 	      var _this2 = this;
 	
 	      var displayDate = function displayDate(dateArr) {
-	        var arr = dateArr;
-	        if (!_lodash2.default.isString(arr[1])) arr[1] += ',';
-	        arr = arr.join(' ');
-	        return arr;
+	        var dateStr = dateArr.reduce(function (str, curVal, i, arr) {
+	          return str + curVal + (i === arr.length - 2 ? ', ' : ' ');
+	        }, '');
+	        return dateStr;
+	      };
+	
+	      var getDisplayFromArr = function getDisplayFromArr(arrOfPosts) {
+	        var outerArr = [];
+	        arrOfPosts.map(function (obj) {
+	          var innerArr = [];
+	          innerArr.push(obj.title);
+	          innerArr.push(obj.date);
+	          innerArr.push(obj.content[0].split('. ')[0] + '...');
+	          innerArr.push(obj.id);
+	          outerArr.push(innerArr);
+	        });
+	        return outerArr;
 	      };
 	
 	      var handleClickDispBlog = function handleClickDispBlog(clicked_id) {
 	        var mainDisp = 5;
 	        var blogDisp = clicked_id.target.id;
-	        console.log(blogDisp);
 	        _this2.props.mainPageChange(mainDisp, null, null, blogDisp);
 	      };
 	
 	      var ChooseRender = function ChooseRender(props) {
 	        var mainDisp = _this2.props.mainDisp;
 	        if (mainDisp === 1) {
-	          return _react2.default.createElement(_ByMonth2.default, { data: _this2.props.data, month: _this2.props.month, displayDate: displayDate, handleClickDispBlog: handleClickDispBlog });
+	          return _react2.default.createElement(_ByMonth2.default, { data: _this2.props.data, month: _this2.props.month, displayDate: displayDate,
+	            getDisplayFromArr: getDisplayFromArr, handleClickDispBlog: handleClickDispBlog });
 	        } else if (mainDisp === 2) {
-	          return _react2.default.createElement(_ByTag2.default, { data: _this2.props.data, tag: _this2.props.tag, displayDate: displayDate, handleClickDispBlog: handleClickDispBlog });
+	          return _react2.default.createElement(_ByTag2.default, { data: _this2.props.data, tag: _this2.props.tag, displayDate: displayDate,
+	            getDisplayFromArr: getDisplayFromArr, handleClickDispBlog: handleClickDispBlog });
 	        } else if (mainDisp === 3) {
 	          return _react2.default.createElement(_About2.default, null);
 	        } else if (mainDisp === 4) {
@@ -37861,19 +37875,6 @@
 	  return arr;
 	};
 	
-	var getDisplayFromArr = function getDisplayFromArr(arrOfPosts) {
-	  var outerArr = [];
-	  arrOfPosts.map(function (obj) {
-	    var innerArr = [];
-	    innerArr.push(obj.title);
-	    innerArr.push(obj.date);
-	    innerArr.push(obj.content[0].split('. ')[0] + '...');
-	    innerArr.push(obj.id);
-	    outerArr.push(innerArr);
-	  });
-	  return outerArr;
-	};
-	
 	var ByMonth = function (_React$Component) {
 	  _inherits(ByMonth, _React$Component);
 	
@@ -37889,6 +37890,8 @@
 	      var _this2 = this;
 	
 	      var displayDate = this.props.displayDate;
+	
+	      var getDisplayFromArr = this.props.getDisplayFromArr;
 	
 	      var month = this.props.month;
 	
@@ -37975,13 +37978,6 @@
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
-	// const displayDate = (dateArr) => {
-	//   let arr = dateArr;
-	//   if (!_.isString(arr[1])) arr[1] += ',';
-	//   arr = arr.join(' ')
-	//   return arr;
-	// }
-	
 	var getObjFromTag = function getObjFromTag(arrOfPosts, tag) {
 	  var arr = [];
 	  arrOfPosts.map(function (obj, ind) {
@@ -37991,19 +37987,6 @@
 	    }
 	  });
 	  return arr;
-	};
-	
-	var getDisplayFromArr = function getDisplayFromArr(arrOfPosts) {
-	  var outerArr = [];
-	  arrOfPosts.map(function (obj) {
-	    var innerArr = [];
-	    innerArr.push(obj.title);
-	    innerArr.push(obj.date);
-	    innerArr.push(obj.content[0].split('. ')[0]);
-	    innerArr.push(obj.id);
-	    outerArr.push(innerArr);
-	  });
-	  return outerArr;
 	};
 	
 	var ByMonth = function (_React$Component) {
@@ -38022,11 +38005,13 @@
 	
 	      var displayDate = this.props.displayDate;
 	
+	      var getDisplayFromArr = this.props.getDisplayFromArr;
+	
 	      var tag = this.props.tag;
 	
-	      var dataByMonth = getObjFromTag(this.props.data, tag);
+	      var dataByTag = getObjFromTag(this.props.data, tag);
 	
-	      var displayData = getDisplayFromArr(dataByMonth);
+	      var displayData = getDisplayFromArr(dataByTag);
 	
 	      return _react2.default.createElement(
 	        'div',
@@ -56071,7 +56056,7 @@
 		"tags": ["bikes", "stuff", "doughnuts"]
 	}, {
 		"date": ["September", 16, 2016],
-		"title": "Heartbreak Blows",
+		"title": "Heartbreak Isn't Nice",
 		"content": ["You call this cat food?. Howl uncontrollably for no reason use lap as chair, but meow. Claws in your leg run in circles if it fits, i sits swat at dog, and cat is love, cat is life or poop on grasses. Lay on arms while you're using the keyboard destroy the blinds, but peer out window, chatter at birds, lure them to mouth.", "Lorem ipsum Tilde +1 mlkshk shoreditch, mixtape humblebrag thundercats. Knausgaard photo booth post-ironic echo park tousled direct trade glossier celiac, cardigan air plant meh butcher fap cliche cold-pressed. Polaroid +1 put a bird on it, dreamcatcher fap slow-carb fam beard seitan. Subway tile af hot chicken sriracha. Intelligentsia jianbing af tote bag keytar try-hard. Quinoa listicle intelligentsia sustainable, tumeric affogato vaporware cold-pressed pitchfork microdosing salvia polaroid kale chips austin. Messenger bag leggings bitters tumblr fashion axe drinking vinegar.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."],
 		"tags": ["bikes", "stuff", "doughnuts"]
 	}];

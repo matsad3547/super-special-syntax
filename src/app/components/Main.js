@@ -35,30 +35,37 @@ export default class Main extends React.Component {
     const handleClickDispBlog = (clicked_id) => {
       var mainDisp = 5;
       let blogDisp = clicked_id.target.id;
-      console.log(blogDisp);
       this.props.mainPageChange(mainDisp, null, null, blogDisp);
     }
 
     const ChooseRender = (props) => {
       let mainDisp = this.props.mainDisp;
-      if(mainDisp === 1) {
+      switch (mainDisp) {
+        case 1:
         return <ByMonth data={this.props.data} month={this.props.month} displayDate={displayDate}
         getDisplayFromArr={getDisplayFromArr} handleClickDispBlog={handleClickDispBlog}/>;
-      }
-      else if (mainDisp === 2) {
+          break;
+
+        case 2:
         return <ByTag data={this.props.data} tag={this.props.tag} displayDate={displayDate}
         getDisplayFromArr={getDisplayFromArr} handleClickDispBlog={handleClickDispBlog}/>;
-      }
-      else if (mainDisp === 3) {
+          break;
+
+        case 3:
         return <About />;
-      }
-      else if (mainDisp === 4) {
+          break;
+
+        case 4:
         return <Contact />;
-      }
-      else if (mainDisp === 5) {
+          break;
+
+        case 5:
         return <DisplaySpecBlog displayDate={displayDate} blogDisplayed={this.props.blogDisplayed} data={this.props.data}/>;
+          break;
+
+        default:
+        return <MostRecent data={this.props.data} displayDate={displayDate}/>;
       }
-      return <MostRecent data={this.props.data} displayDate={displayDate}/>;
     };
 
     return(
