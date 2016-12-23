@@ -1,5 +1,5 @@
 {
-  "name": "wk-06-reactblog",
+  "name": "Super Special Syntax",
   "version": "1.0.0",
   "description": "Demo Blog Page Built with React",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "wk-06-reactblog"
+    "url": "super-special-syntax"
   },
   "author": "Matt Sadauckas",
   "license": "ISC",
